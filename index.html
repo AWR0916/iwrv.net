@@ -314,12 +314,8 @@
   .fact-row dd{ margin:0; color:var(--ink); }
 
   .model-card{ border:1px solid var(--hair-p); border-radius:12px; background:#fff; box-shadow:0 10px 30px rgba(35,32,26,.06); padding:34px; }
-  .model-frame{ aspect-ratio:4/5; border:1px solid var(--hair-p); background:linear-gradient(160deg,#e5dfd0,#efe9dc); margin-bottom:24px; overflow:hidden; }
-  .model-preview{ position:relative; display:flex; width:100%; height:100%; align-items:flex-end; justify-content:center; overflow:hidden; color:#fff; background:linear-gradient(160deg,#e5dfd0,#efe9dc); }
-  .model-preview img{ width:100%; height:100%; object-fit:contain; object-position:center bottom; padding:18px 14px 0; transition:transform .45s ease; }
-  .model-preview::after{ content:""; position:absolute; inset:48% 0 0; background:linear-gradient(transparent,rgba(25,25,25,.78)); pointer-events:none; }
-  .model-preview span{ position:absolute; z-index:1; bottom:22px; left:20px; right:20px; text-align:center; font-family:var(--f-body); font-size:.86rem; letter-spacing:.06em; color:#fff; }
-  .model-preview:hover img{ transform:scale(1.03); }
+  .model-frame{ aspect-ratio:1; border:1px solid var(--hair-p); background:linear-gradient(160deg,#e5dfd0,#efe9dc); margin-bottom:24px; overflow:hidden; }
+  .model-frame iframe{ width:100%; height:100%; border:0; display:block; }
   .model-card h3{ font-family:var(--f-en); font-style:italic; font-size:1.5rem; color:var(--purple); letter-spacing:.04em; margin-bottom:10px; }
   .model-card p{ color:var(--muted-p); font-size:.94rem; margin:0 0 22px; }
 
@@ -514,13 +510,10 @@
 
       <div class="model-card reveal">
         <div class="model-frame">
-          <a class="model-preview" href="https://hub.vroid.com/characters/3597547719789030325/models/7099696634872633646" target="_blank" rel="noopener">
-            <img src="images/ai-winston-rucker-main.PNG" alt="藍・W・楽歌の3Dモデル紹介画像" loading="lazy">
-            <span>VRoid Hubで3Dモデルを見る</span>
-          </a>
+          <iframe width="500" height="500" src="https://hub.vroid.com/characters/3597547719789030325/models/7099696634872633646/embed" frameborder="0" allowfullscreen allow="xr-spatial-tracking" title="藍・W・楽歌 3Dモデルプレビュー" loading="lazy"></iframe>
         </div>
         <h3>3D Model</h3>
-        <p>藍・W・楽歌は、3Dモデルを使用して活動するVTuberです。モデルの詳細確認や操作は、VRoid Hubの公開ページでお楽しみいただけます。</p>
+        <p>藍・W・楽歌は、3Dモデルを使用して活動するVTuberです。配信、動画、サムネイル、イベント出演、PR企画など、内容に合わせてバーチャルならではの表現が可能です。</p>
         <a class="btn btn-solid" href="https://hub.vroid.com/characters/3597547719789030325/models/7099696634872633646" target="_blank" rel="noopener">3Dモデルを見る</a>
       </div>
     </div>
