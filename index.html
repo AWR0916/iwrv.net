@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ▼▼▼ SEO / OGP：URL・画像は公開先に合わせて差し替え ▼▼▼ -->
+<title>藍・W・楽歌 Official Site ｜ AWR - After Work Radio</title>
+<meta name="description" content="藍・W・楽歌（Ai Winston Rucker）は、ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動する男性VTuber / Virtual Broadcaster。舞台役者、イベントMC、インターネットラジオDJの経験を活かし、大人の趣味時間を届けています。">
+<link rel="canonical" href="https://iwrv.net/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="藍・W・楽歌 Official Site ｜ あの頃のワクワクへ、ようこそ。">
+<meta property="og:description" content="仕事終わりに、少しだけ寄り道を。歌、ラジオ、レトロゲーム、旅、歴史・地理を届けるVTuber・藍・W・楽歌の公式サイト。">
+<meta property="og:image" content="https://iwrv.net/images/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://iwrv.net/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@i_w_r_v">
+<!-- ▲▲▲ ここまで ▲▲▲ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- JSON-LD 構造化データ：公式サイト＋人物プロフィール -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "藍・W・楽歌 Official Site",
+      "alternateName": "AWR - After Work Radio",
+      "url": "https://iwrv.net/",
+      "description": "藍・W・楽歌（Ai Winston Rucker）の公式サイト。ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動するVTuber / Virtual Broadcaster。"
+    },
+    {
+      "@type": "Person",
+      "name": "藍・W・楽歌",
+      "alternateName": "Ai Winston Rucker",
+      "jobTitle": "Virtual Broadcaster / VTuber",
+      "url": "https://iwrv.net/",
+      "sameAs": [
+        "https://x.com/i_w_r_v"
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "name": "藍・W・楽歌 Profile",
+      "url": "https://iwrv.net/#profile",
+      "about": {
+        "@type": "Person",
+        "name": "藍・W・楽歌",
+        "alternateName": "Ai Winston Rucker"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    /* --- カラー --- */
+    --bg:      #191919;
+    --paper:   #F5F1E8;
+    --text:    #E8E2D8;
+    --purple:  #69508C;
+    --gold:    #B69755;
+    --link:    #8093B6;
+    --danger:  #AA5555;
+
+    --bg-2:    #201F1D;
+    --ink:     #23201A;
+    --muted:   #9A938A;
+    --muted-p: #6E675C;
+    --hair:    rgba(182,151,85,.28);
+    --hair-p:  #D8D0BE;
+
+    --f-mincho: "Shippori Mincho", serif;
+    --f-en:     "Cormorant Garamond", serif;
+    --f-body:   "Noto Sans JP", sans-serif;
+    --f-num:    "Inter", sans-serif;
+
+    --container: 1200px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--f-body); font-weight:400; line-height:1.9; -webkit-font-smoothing:antialiased; }
+  img{ max-width:100%; display:block; }
+  a{ color:var(--link); text-decoration:none; }
+  h1,h2,h3,h4{ margin:0; line-height:1.4; font-weight:600; }
+  ::selection{ background:var(--purple); color:#fff; }
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .container{ max-width:var(--container); margin-inline:auto; padding-inline:32px; }
+
+  .num{ font-family:var(--f-num); font-weight:500; letter-spacing:.08em; }
+  /* 放送局風ラベル */
+  .st-label{ display:inline-flex; align-items:center; gap:14px; font-family:var(--f-num); font-size:.68rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); border:1px solid var(--hair); padding:6px 16px; }
+  .st-label::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  .paper .st-label{ border-color:var(--hair-p); color:var(--purple); }
+  .paper .st-label::before{ background:var(--purple); }
+
+  /* フェードイン */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity 1s ease, transform 1s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ============ ナビゲーション ============ */
+  .nav{ position:fixed; top:0; left:0; right:0; z-index:100; transition:background .4s ease, border-color .4s ease; border-bottom:1px solid transparent; }
+  .nav.scrolled{ background:rgba(25,25,25,.72); backdrop-filter:blur(14px); border-bottom-color:var(--hair); }
+  .nav-inner{ display:flex; align-items:center; height:80px; }
+  .brand{ display:flex; align-items:baseline; gap:14px; color:var(--text); }
+  .brand .awr{ font-family:var(--f-en); font-weight:600; font-size:1.55rem; letter-spacing:.14em; color:var(--gold); }
+  .brand .bn{ font-family:var(--f-num); font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); }
+  .nav-menu{ display:flex; gap:16px; margin-left:auto; align-items:center; }
+  .nav-menu a{ font-family:var(--f-body); font-size:.72rem; letter-spacing:.08em; color:var(--text); position:relative; white-space:nowrap; }
+  .nav-menu a::after{ content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px; background:var(--gold); transition:width .3s ease; }
+  .nav-menu a:hover::after{ width:100%; }
+  .burger{ display:none; margin-left:auto; background:none; border:0; padding:10px; cursor:pointer; }
+  .burger span{ display:block; width:26px; height:1.5px; background:var(--text); margin:6px 0; transition:transform .3s ease, opacity .3s ease; }
+  .nav[data-open="true"] .burger span:nth-child(1){ transform:translateY(7.5px) rotate(45deg); }
+  .nav[data-open="true"] .burger span:nth-child(2){ opacity:0; }
+  .nav[data-open="true"] .burger span:nth-child(3){ transform:translateY(-7.5px) rotate(-45deg); }
+
+  /* ============ ヒーロー ============ */
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; padding:110px 0 90px; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; }
+  .hero-bg .layer{ position:absolute; inset:-8%; background-size:cover; background-position:center; will-change:transform; }
+  .hero-bg .l-map{ opacity:.14; background-image:
+      radial-gradient(circle at 20% 30%, rgba(182,151,85,.18), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(105,80,140,.20), transparent 45%),
+      repeating-linear-gradient(46deg, rgba(182,151,85,.05) 0 2px, transparent 2px 26px); }
+  .hero-bg .l-record{ opacity:.10; background-image:
+      repeating-radial-gradient(circle at 78% 46%, rgba(230,226,216,.12) 0 1px, transparent 1px 9px); }
+  .hero-overlay{ position:absolute; inset:0; z-index:1; background:
+      linear-gradient(90deg, rgba(25,25,25,.94) 0%, rgba(25,25,25,.78) 46%, rgba(25,25,25,.62) 100%); }
+  .hero-grain{ position:absolute; inset:0; z-index:1; opacity:.5; pointer-events:none;
+      background-image:radial-gradient(rgba(255,255,255,.02) 1px, transparent 1px); background-size:3px 3px; }
+
+  .hero-inner{ position:relative; z-index:2; width:100%; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
+  .hero-awr{ font-family:var(--f-en); font-weight:600; font-size:clamp(4rem,10vw,7rem); letter-spacing:.1em; line-height:1; color:var(--text); }
+  .hero-awr b{ color:var(--gold); font-weight:600; }
+  .hero-series{ font-family:var(--f-en); font-style:italic; font-size:clamp(1.3rem,2.8vw,1.9rem); letter-spacing:.08em; color:var(--gold); margin:10px 0 26px; }
+  .hero-host{ display:none; }
+  .hero-catch{ font-family:var(--f-mincho); font-weight:600; font-size:clamp(1.5rem,3.4vw,2.2rem); line-height:1.7; margin-bottom:18px; }
+  .hero-sub{ color:var(--muted); font-size:.98rem; max-width:42ch; margin-bottom:32px; }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:16px; margin-bottom:40px; }
+  .btn{ display:inline-flex; align-items:center; gap:10px; font-family:var(--f-body); font-weight:500; font-size:.95rem; letter-spacing:.06em; padding:14px 30px; border-radius:2px; transition:background .3s ease, color .3s ease, border-color .3s ease; }
+  .btn-solid{ background:var(--gold); color:#191919; border:1px solid var(--gold); }
+  .btn-solid:hover{ background:#c6a86a; border-color:#c6a86a; }
+  .btn-line{ background:transparent; color:var(--text); border:1px solid var(--hair); }
+  .btn-line:hover{ border-color:var(--gold); color:var(--gold); }
+
+  .hero-portrait{ position:relative; aspect-ratio:3/4; border:none; padding:0; background:transparent; }
+  .hero-portrait .frame{ position:relative; width:100%; height:100%; overflow:visible; background:transparent; display:flex; align-items:flex-end; justify-content:center; }
+  .hero-portrait img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center bottom;
+    padding:0;
+  }
+  .hero-portrait .note{ font-family:var(--f-en); font-style:italic; color:var(--muted); text-align:center; padding:24px; line-height:1.9; }
+  .hero-portrait .cap{ position:absolute; left:0; bottom:-20px; font-family:var(--f-num); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+
+  /* ON AIR / Today's Program */
+  .program{ display:inline-flex; flex-direction:column; gap:10px; }
+  .onair{ display:inline-flex; align-items:center; gap:11px; font-family:var(--f-num); font-size:.72rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--danger); }
+  .onair .lamp{ width:9px; height:9px; border-radius:50%; background:var(--danger); box-shadow:0 0 8px rgba(170,85,85,.7); animation:pulse 2.6s ease-out infinite; }
+  @keyframes pulse{ 0%{ box-shadow:0 0 8px 0 rgba(170,85,85,.7);} 70%{ box-shadow:0 0 8px 9px rgba(170,85,85,0);} 100%{ box-shadow:0 0 8px 0 rgba(170,85,85,0);} }
+  .program-label{ font-family:var(--f-en); font-style:italic; font-size:.78rem; color:var(--muted); letter-spacing:.18em; text-transform:uppercase; margin:0; }
+  .program-tags{ display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:0; padding:0; }
+  .program-tags li{ font-family:var(--f-num); font-size:.68rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--text); border:1px solid var(--hair); padding:5px 13px; border-radius:2px; white-space:nowrap; }
+
+  .scroll-cue{ position:absolute; left:32px; bottom:30px; z-index:2; font-family:var(--f-num); font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:14px; }
+  .scroll-cue::after{ content:""; width:1px; height:40px; background:linear-gradient(var(--gold), transparent); }
+
+  /* ============ セクション共通 ============ */
+  section{ padding:120px 0; position:relative; }
+  .sec-head{ margin-bottom:56px; }
+  .sec-title{ font-family:var(--f-mincho); font-weight:700; font-size:clamp(1.7rem,3.6vw,2.4rem); letter-spacing:.08em; margin-top:20px; }
+  .sec-title .en{ display:block; font-family:var(--f-en); font-style:italic; font-weight:500; font-size:1.4rem; color:var(--gold); letter-spacing:.05em; margin-bottom:6px; }
+  .sec-sub{ color:var(--muted); margin-top:10px; max-width:56ch; }
+  .paper .sec-title{ color:var(--ink); }
+  .paper .sec-sub{ color:var(--muted-p); }
+  .paper .sec-title .en{ color:var(--purple); }
+  .rule-gold{ width:56px; height:2px; background:var(--gold); }
+
+  /* ============ PROGRAM（紙面） ============ */
+  .paper{ background:var(--paper); color:var(--ink); }
+  .paper a{ color:var(--purple); }
+  .prog-intro{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center; margin-bottom:96px; }
+  .prog-body{ font-family:var(--f-mincho); font-weight:500; font-size:1.3rem; line-height:2.1; color:var(--ink); }
+  .prog-body p{ margin:0 0 1.4em; }
+  .host-card{ border:1px solid var(--hair-p); padding:44px 42px; display:grid; grid-template-columns:.8fr 1.2fr; gap:40px; align-items:center; margin-bottom:96px; background:#fff; box-shadow:0 10px 30px rgba(35,32,26,.06); border-radius:12px; }
+  .host-portrait{ aspect-ratio:3/4; border:1px solid var(--hair-p); padding:8px; }
+  .host-portrait .frame{ width:100%; height:100%; background:linear-gradient(160deg,#e5dfd0,#efe9dc); display:flex; align-items:center; justify-content:center; font-family:var(--f-en); font-style:italic; color:var(--muted-p); text-align:center; padding:20px; }
+  .host-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center bottom;
+    padding:18px 8px 0;
+  }
+  .host-info .hlabel{ font-family:var(--f-num); font-size:.66rem; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--purple); }
+  .host-info h3{ font-family:var(--f-mincho); font-weight:700; font-size:1.7rem; letter-spacing:.08em; color:var(--ink); margin:14px 0 2px; }
+  .host-info .hen{ font-family:var(--f-en); font-style:italic; font-size:1.15rem; color:var(--muted-p); letter-spacing:.04em; }
+  .host-info .htype{ font-family:var(--f-num); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin:12px 0 20px; }
+  .host-info p{ margin:0 0 1em; color:var(--ink); font-size:.98rem; }
+  /* 番組コーナー（番組表風） */
+  .corner-list{ border-top:1px solid var(--hair-p); }
+  .corner{ display:grid; grid-template-columns:60px 260px 1fr; gap:28px; align-items:baseline; padding:26px 8px; border-bottom:1px solid var(--hair-p); transition:background .3s ease; }
+  .corner:hover{ background:#EFEADD; }
+  .corner .cn{ font-family:var(--f-num); font-size:.75rem; color:var(--muted-p); }
+  .corner .cen{ font-family:var(--f-en); font-size:1.45rem; letter-spacing:.04em; color:var(--purple); }
+  .corner p{ margin:0; font-size:.95rem; color:var(--muted-p); }
+
+  /* ============ RADIO PROGRAM ============ */
+  .radio-layout{ display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
+  .radio-copy{ font-family:var(--f-mincho); font-size:1.18rem; line-height:2.05; color:var(--ink); }
+  .radio-copy p{ margin:0 0 1.2em; }
+  .radio-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+  .radio-meta{ border-top:1px solid var(--hair-p); }
+  .radio-meta-row{ display:grid; grid-template-columns:150px 1fr; gap:24px; padding:18px 0; border-bottom:1px solid var(--hair-p); }
+  .radio-meta-row dt{ font-family:var(--f-num); font-size:.68rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--purple); }
+  .radio-meta-row dd{ margin:0; color:var(--ink); }
+
+  /* ============ ARCHIVE ============ */
+  .video-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:32px; }
+  .video{ overflow:hidden; }
+  .video-link{ display:block; color:inherit; }
+  .video .thumb{ aspect-ratio:16/9; overflow:hidden; border:1px solid var(--hair); background:linear-gradient(160deg,#242129,#1a181e); position:relative; }
+  .video .thumb iframe{ width:100%; height:100%; border:0; display:block; }
+  .video .thumb img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+  .video .thumb .ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--muted); font-family:var(--f-en); font-style:italic; font-size:.95rem; text-align:center; padding:20px; transition:transform .5s ease; }
+  .video-link:hover .thumb img{ transform:scale(1.04); }
+  .video:hover .thumb .ph{ transform:scale(1.05); }
+  .video .vmeta{ padding-top:18px; }
+  .video .vcat{ font-family:var(--f-num); font-size:.66rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+  .video .vmeta h3{ font-family:var(--f-mincho); font-weight:600; font-size:1.1rem; letter-spacing:.04em; margin-top:8px; }
+
+  /* ============ ON AIR SCHEDULE ============ */
+  .schedule-feature{ margin:0 0 56px; }
+  .schedule-feature a{ display:block; color:inherit; }
+  .schedule-feature img{ width:100%; max-height:720px; object-fit:contain; border:1px solid var(--hair); background:#111; }
+  .schedule-caption{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 22px; margin:16px 0 0; }
+  .schedule-caption strong{ font-family:var(--f-mincho); font-size:1.2rem; letter-spacing:.05em; }
+  .schedule-caption span{ font-size:.86rem; color:var(--muted); }
+  .schedule-x{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 30px; margin-top:24px; padding-top:24px; border-top:1px solid var(--hair); }
+  .schedule-x p{ margin:0; color:var(--muted); }
+  .more-link{ font-family:var(--f-en); font-style:italic; font-size:1.2rem; letter-spacing:.04em; color:var(--gold); display:inline-flex; align-items:center; gap:12px; }
+  .more-link::after{ content:"→"; transition:transform .3s ease; }
+  .more-link:hover::after{ transform:translateX(6px); }
+
+  /* ============ CLUB（紙面） ============ */
+  #club .club-inner{ max-width:720px; margin-inline:auto; text-align:center; }
+  #club .club-lead{ font-family:var(--f-mincho); font-weight:600; font-size:1.25rem; line-height:2.1; color:var(--ink); margin:32px 0 36px; }
+
+  /* ============ BUSINESS ============ */
+  #business .biz-lead{ font-family:var(--f-mincho); font-weight:500; font-size:1.2rem; line-height:2.1; max-width:46em; margin-bottom:64px; }
+  .biz-cols{ display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-bottom:64px; }
+  .biz-block h3{ font-family:var(--f-en); font-style:italic; font-weight:500; font-size:1.5rem; letter-spacing:.04em; color:var(--gold); margin-bottom:24px; }
+  .biz-list{ list-style:none; margin:0; padding:0; columns:2; column-gap:32px; }
+  .biz-list li{ padding:10px 0 10px 24px; position:relative; font-size:.95rem; break-inside:avoid; border-bottom:1px solid var(--hair); }
+  .biz-list li::before{ content:""; position:absolute; left:2px; top:1.35em; width:10px; height:1px; background:var(--gold); }
+  .biz-list.single{ columns:1; }
+  .biz-cta{ text-align:center; padding-top:12px; }
+
+  /* ============ CONTACT ============ */
+  #contact{ border-top:1px solid var(--hair); }
+  #contact .contact-inner{ max-width:760px; margin-inline:auto; text-align:center; }
+  #contact .c-body{ color:var(--muted); margin:28px auto 40px; max-width:46em; }
+  .c-kinds{ display:flex; flex-wrap:wrap; gap:10px 12px; justify-content:center; margin-bottom:48px; list-style:none; padding:0; }
+  .c-kinds li{ font-family:var(--f-num); font-size:.7rem; letter-spacing:.14em; color:var(--muted); border:1px solid var(--hair); padding:6px 16px; border-radius:2px; }
+  .c-mail{ margin-top:36px; font-family:var(--f-num); font-size:.92rem; letter-spacing:.06em; color:var(--muted); }
+  .c-mail a{ color:var(--gold); border-bottom:1px solid var(--hair); padding-bottom:2px; }
+
+  /* ============ フッター ============ */
+  footer{ border-top:1px solid var(--hair); padding:80px 0 50px; }
+  .foot-copy{ font-family:var(--f-mincho); font-weight:600; font-size:1.5rem; letter-spacing:.1em; text-align:center; margin-bottom:16px; }
+  .foot-en{ font-family:var(--f-en); font-style:italic; font-size:1.15rem; text-align:center; color:var(--gold); margin-bottom:6px; }
+  .foot-jp{ font-size:.9rem; text-align:center; color:var(--muted); margin-bottom:48px; }
+  .foot-grid{ display:flex; flex-wrap:wrap; gap:20px 40px; align-items:center; justify-content:center; padding-bottom:40px; border-bottom:1px solid var(--hair); }
+  .foot-grid a{ font-family:var(--f-num); font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  .foot-grid a:hover{ color:var(--gold); }
+  .foot-bottom{ display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; padding-top:30px; }
+  .foot-bottom .credit, .foot-bottom .cr{ font-family:var(--f-num); font-size:.72rem; letter-spacing:.06em; color:var(--muted); }
+  .foot-bottom .credit a{ color:var(--gold); }
+
+  @media (prefers-reduced-motion: reduce){ .onair .lamp{ animation:none; } }
+
+
+
+  /* ============ 追加：PROFILE / CONTENTS調整 ============ */
+  .hero-name{ font-family:var(--f-mincho); font-weight:800; font-size:clamp(2.6rem,6.5vw,4.8rem); letter-spacing:.12em; line-height:1.25; color:var(--text); margin:0 0 10px; }
+  .hero-name b{ color:var(--gold); font-weight:800; }
+  .hero-site{ font-family:var(--f-num); font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+  .hero-concept{ font-family:var(--f-en); font-style:italic; font-size:clamp(1.25rem,2.8vw,1.9rem); letter-spacing:.08em; color:var(--gold); margin:0 0 26px; }
+
+  .profile-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:start; margin-bottom:76px; }
+  .profile-lead{ font-family:var(--f-mincho); font-weight:500; font-size:1.22rem; line-height:2.05; color:var(--ink); margin:0; }
+  .profile-lead p{ margin:0 0 1.35em; }
+  .fact-list{ border-top:1px solid var(--hair-p); margin:28px 0 0; }
+  .fact-row{ display:grid; grid-template-columns:120px 1fr; gap:22px; padding:12px 0; border-bottom:1px solid var(--hair-p); }
+  .fact-row dt{ font-family:var(--f-num); font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; color:var(--purple); }
+  .fact-row dd{ margin:0; color:var(--ink); }
+
+  .model-card{ border:1px solid var(--hair-p); border-radius:12px; background:#fff; box-shadow:0 10px 30px rgba(35,32,26,.06); padding:34px; }
+  .model-frame{ aspect-ratio:4/5; border:1px solid var(--hair-p); background:linear-gradient(160deg,#e5dfd0,#efe9dc); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--muted-p); font-family:var(--f-en); font-style:italic; margin-bottom:24px; overflow:hidden; }
+  .model-frame iframe{ width:100%; height:100%; border:0; display:block; }
+  .model-card h3{ font-family:var(--f-en); font-style:italic; font-size:1.5rem; color:var(--purple); letter-spacing:.04em; margin-bottom:10px; }
+  .model-card p{ color:var(--muted-p); font-size:.94rem; margin:0 0 22px; }
+
+  .mini-section{ margin-top:88px; }
+  .mini-title{ font-family:var(--f-mincho); font-weight:700; font-size:1.55rem; letter-spacing:.08em; color:var(--ink); margin:18px 0 24px; }
+  .setting-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:44px; align-items:start; }
+  .setting-box{ border:1px solid var(--hair-p); background:#fff; border-radius:12px; padding:32px; }
+  .setting-box p{ margin:0 0 1.2em; }
+  .setting-box p:last-child{ margin-bottom:0; }
+  .lore-timeline{ border-top:1px solid var(--hair-p); }
+  .lore-row{ display:grid; grid-template-columns:190px 1fr; gap:28px; padding:18px 0; border-bottom:1px solid var(--hair-p); }
+  .lore-era{ font-family:var(--f-num); font-size:.82rem; letter-spacing:.08em; color:var(--purple); }
+  .lore-row p{ margin:0; color:var(--muted-p); }
+  .lore-lead{ max-width:58ch; margin:0; font-family:var(--f-mincho); font-size:1.1rem; line-height:2; color:var(--ink); }
+  .lore-details{ margin-top:32px; border-top:1px solid var(--hair-p); border-bottom:1px solid var(--hair-p); }
+  .lore-details summary{ display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 4px; cursor:pointer; font-family:var(--f-mincho); font-weight:700; color:var(--ink); }
+  .lore-details summary::-webkit-details-marker{ display:none; }
+  .lore-details summary::after{ content:"+"; flex:0 0 auto; font-family:var(--f-num); font-size:1.4rem; font-weight:400; color:var(--purple); }
+  .lore-details[open] summary{ border-bottom:1px solid var(--hair-p); }
+  .lore-details[open] summary::after{ content:"-"; }
+  .lore-detail-body{ padding:32px 0 8px; }
+  .lore-detail-body .mini-title{ margin-top:48px; }
+  .activity-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .history-list{ border-top:1px solid var(--hair-p); }
+  .history-row{ display:grid; grid-template-columns:150px 1fr; gap:22px; padding:13px 0; border-bottom:1px solid var(--hair-p); }
+  .history-date{ font-family:var(--f-num); font-size:.82rem; color:var(--purple); letter-spacing:.04em; }
+  .history-text{ color:var(--ink); }
+  .history-link{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--gold); text-decoration-thickness:1px; text-underline-offset:4px; transition:color .2s ease, text-decoration-color .2s ease; }
+  .history-link:hover,
+  .history-link:focus-visible{ color:var(--purple); text-decoration-color:var(--purple); }
+
+  .content-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+  .content-card{ border:1px solid var(--hair); border-radius:12px; background:var(--bg-2); box-shadow:0 10px 30px rgba(0,0,0,.25); padding:30px 28px; transition:transform .35s ease, border-color .35s ease; }
+  .content-card:hover{ transform:translateY(-6px); border-color:var(--gold); }
+  .content-card .ct-en{ font-family:var(--f-en); font-style:italic; font-size:1.4rem; color:var(--gold); letter-spacing:.04em; margin-bottom:6px; }
+  .content-card h3{ font-family:var(--f-mincho); font-size:1.15rem; letter-spacing:.06em; margin-bottom:12px; }
+  .content-card p{ margin:0; color:var(--muted); font-size:.92rem; }
+
+  @media (max-width:900px){
+    .hero-portrait{
+      max-width:280px;
+      margin-inline:auto;
+    }
+
+  .hero-portrait img{
+    padding:8px 8px 0;
+  }
+
+    .profile-grid,
+    .setting-grid,
+    .activity-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+
+    .lore-row,
+    .history-row,
+    .fact-row{
+      grid-template-columns:1fr;
+      gap:4px;
+    }
+  }
+
+  @media (max-width:520px){
+    .hero-portrait{
+      max-width:240px;
+    }
+  }
+
+  /* ============ レスポンシブ ============ */
+  @media (max-width:1280px){
+    .nav-menu{ display:none; }
+    .burger{ display:block; }
+    .nav[data-open="true"] .nav-menu{ display:flex; flex-direction:column; align-items:flex-start; gap:22px; position:absolute; top:80px; left:0; right:0; background:rgba(25,25,25,.96); backdrop-filter:blur(14px); border-bottom:1px solid var(--hair); padding:30px 32px; }
+  }
+  @media (max-width:900px){
+    .hero{ padding:120px 0 90px; }
+    .hero-inner{ grid-template-columns:1fr; gap:44px; }
+    .hero-portrait{ width:100%; max-width:280px; order:-1; margin-inline:auto; }
+    .hero-overlay{ background:linear-gradient(180deg, rgba(25,25,25,.72), rgba(25,25,25,.92)); }
+    .prog-intro{ grid-template-columns:1fr; gap:40px; margin-bottom:72px; }
+    .radio-layout{ grid-template-columns:1fr; gap:40px; }
+    .host-card{ grid-template-columns:1fr; padding:32px 26px; }
+    .host-portrait{ max-width:260px; }
+    .corner{ grid-template-columns:1fr; gap:6px; }
+    .biz-cols{ grid-template-columns:1fr; }
+    .biz-list{ columns:1; }
+    section{ padding:88px 0; }
+  }
+  @media (max-width:520px){
+    .container{ padding-inline:22px; }
+    .hero-inner{ gap:24px; }
+    .hero-portrait{ max-width:150px; }
+    .schedule-x{ align-items:flex-start; flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ナビ ============ -->
+<header class="nav" data-open="false" id="siteNav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top"><span class="awr">藍・W・楽歌</span><span class="bn">Official Site</span></a>
+    <button class="burger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-menu" aria-label="メインメニュー">
+      <a href="#top">ホーム</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#contents">コンテンツ</a>
+      <a href="#radio-program">ラジオ</a>
+      <a href="#archive">アーカイブ</a>
+      <a href="#onair">スケジュール</a>
+      <a href="https://x.com/i_w_r_v" target="_blank" rel="noopener">X</a>
+      <a href="#club">ファンクラブ</a>
+      <a href="#business">仕事の相談</a>
+      <a href="#contact">問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME / Hero ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <!-- ▼ 実素材を入れる場合：.layer に background-image:url('images/hero-xxx.jpg') を指定 -->
+    <div class="layer l-map" data-parallax="0.15"></div>
+    <div class="layer l-record" data-parallax="0.08"></div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-site">Official Site</p>
+      <h1 class="hero-name">藍・<b>W</b>・楽歌</h1>
+      <p class="hero-concept">AWR - After Work Radio</p>
+      <p class="hero-catch">あの頃のワクワクへ、ようこそ。</p>
+      <p class="hero-sub">仕事終わりに、少しだけ寄り道を。<br>ラジオのように話し、ロックを歌い、レトロゲームを遊び、旅先で歴史と地理を巡る。<br>大人のための趣味時間をお届けしています。</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener">YouTubeチャンネルを見る</a>
+        <a class="btn btn-line" href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener">ファンクラブのご案内</a>
+      </div>
+      <div class="program">
+        <div class="onair"><span class="lamp" aria-hidden="true"></span>On Air</div>
+        <p class="program-label">Today's Contents</p>
+        <ul class="program-tags">
+          <li>AlternativeRadio</li>
+          <li>Music</li>
+          <li>Retro Game</li>
+          <li>Voice Drama</li>
+          <li>Vlog</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="frame">
+          <img src="images/ai-winston-rucker-main.PNG" alt="藍・W・楽歌 立ち絵">
+      </div>
+      <span class="cap">Ai Winston Rucker</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section id="profile" class="paper">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Profile</span>
+      <h2 class="sec-title"><span class="en">Profile</span>藍・W・楽歌について</h2>
+    </div>
+
+    <div class="profile-grid">
+      <div class="reveal">
+        <div class="rule-gold" style="margin-bottom:28px;"></div>
+        <div class="profile-lead">
+          <p><strong>藍・W・楽歌</strong><br><span style="font-family:var(--f-en);font-style:italic;color:var(--purple);">Ai Winston Rucker</span></p>
+          <p>歌とお芝居、ゲーム、旅行、歴史・地理が好きな男性VTuber / Virtual Broadcaster。</p>
+          <p>舞台役者、イベントMC、インターネットラジオDJなどの経験を持ち、現在はVTuberとして、トーク、歌、レトロゲーム実況、旅行、歴史・地理をテーマに活動しています。</p>
+          <p>仕事終わりにふらっと立ち寄れる場所。昔好きだったものを、今の自分でもう一度楽しめる時間。そんな“大人の趣味時間”をお届けしています。</p>
+        </div>
+        <dl class="fact-list">
+          <div class="fact-row"><dt>Name</dt><dd>藍・W・楽歌</dd></div>
+          <div class="fact-row"><dt>Reading</dt><dd>あい・うぃんすとん・らっか</dd></div>
+          <div class="fact-row"><dt>English</dt><dd>Ai Winston Rucker</dd></div>
+          <div class="fact-row"><dt>Birthday</dt><dd>10月25日</dd></div>
+          <div class="fact-row"><dt>Hobby</dt><dd>旅行、グルメ、ドライブ、歴史、ゲーム、歌、芝居</dd></div>
+          <div class="fact-row"><dt>Music</dt><dd>the pillows、ロックンロール、懐メロ</dd></div>
+        </dl>
+      </div>
+
+      <div class="model-card reveal">
+        <div class="model-frame">
+          <iframe src="https://hub.vroid.com/characters/3597547719789030325/models/7099696634872633646/embed" title="藍・W・楽歌 3Dモデルプレビュー" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <h3>3D Model</h3>
+        <p>藍・W・楽歌は、3Dモデルを使用して活動するVTuberです。配信、動画、サムネイル、イベント出演、PR企画など、内容に合わせてバーチャルならではの表現が可能です。</p>
+        <a class="btn btn-solid" href="https://hub.vroid.com/characters/3597547719789030325/models/7099696634872633646" target="_blank" rel="noopener">3Dモデルを見る</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section id="contents">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Contents</span>
+      <h2 class="sec-title"><span class="en">Contents</span>配信・動画コンテンツ</h2>
+      <p class="sec-sub">ラジオ、音楽、レトロゲーム、声劇、旅。藍・W・楽歌が届ける、大人のための趣味時間です。気になるジャンルから、気軽にお楽しみください。</p>
+    </div>
+    <div class="content-grid">
+      <article class="content-card reveal"><div class="ct-en">AlternativeRadio</div><h3>月曜夜の30分生放送ラジオ番組</h3><p>日常の話、音楽の話、歴史の話、雑学勝負…濃厚な30分をお送りするトーク番組。</p></article>
+      <article class="content-card reveal"><div class="ct-en">Music</div><h3>懐メロと邦ロックを中心に</h3><p>the pillowsをはじめとしたロック、90年代音楽を中心に歌っています。歌枠リレー、ライブイベントなどにも出演しています。</p></article>
+      <article class="content-card reveal"><div class="ct-en">Retro Game</div><h3>あの頃のゲームを、今の目線で</h3><p>子どもの頃に遊んだ名作も、今だから分かる面白さがある。懐かしさと発見を行き来する実況をお届けします。</p></article>
+      <article class="content-card reveal"><div class="ct-en">Voice Drama</div><h3>声劇・朗読</h3><p>舞台俳優の経験を活かし、声劇、朗読配信をお届けします。</p></article>
+      <article class="content-card reveal"><div class="ct-en">Vlog</div><h3>旅先で見つけた景色と物語</h3><p>史跡巡り、街歩き、ドライブ、グルメ。現地で見たものを、歴史や地理の視点も交えて紹介します。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RADIO PROGRAM ============ -->
+<section id="radio-program" class="paper">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Radio Program</span>
+      <h2 class="sec-title"><span class="en">AlternativeRadio</span>藍・W・楽歌のラジオ番組</h2>
+    </div>
+    <div class="radio-layout">
+      <div class="radio-copy reveal">
+        <p>人を選ぶけれど、好きな人には深く刺さる。雑学、音楽、近況、趣味の話を中心に、藍・W・楽歌がゆるく語るオルタナティブなラジオ配信です。</p>
+        <p>お便り、コーナー投稿、番組内CMも募集中です。</p>
+        <div class="radio-actions">
+          <a class="btn btn-solid" href="https://a1wruck3r2025.wixsite.com/irwv" target="_blank" rel="noopener">番組ページを見る</a>
+        </div>
+      </div>
+      <dl class="radio-meta reveal">
+        <div class="radio-meta-row"><dt>Program</dt><dd>AlternativeRadio</dd></div>
+        <div class="radio-meta-row"><dt>Schedule</dt><dd>毎週月曜 21:00よりYouTubeで生放送</dd></div>
+        <div class="radio-meta-row"><dt>Contents</dt><dd>雑学、音楽、近況、趣味の話</dd></div>
+        <div class="radio-meta-row"><dt>Participation</dt><dd>お便り、コーナー投稿、番組内CMを募集中</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHIVE ============ -->
+<section id="archive">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Archive</span>
+      <h2 class="sec-title"><span class="en">Archive</span>放送アーカイブ</h2>
+      <p class="sec-sub">これまでの配信・動画アーカイブです。歌、雑談、レトロゲーム、歴史・地理、旅。気になるジャンルから、藍・W・楽歌の空気をのぞいてみてください。</p>
+    </div>
+    <div class="video-grid">
+      <article class="video reveal"><a class="video-link" href="https://youtube.com/live/Mut930hbo2o?feature=share" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Mut930hbo2o/hqdefault.jpg" alt="ラジオ傑作回のサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">AlternativeRadio</span><h3>ラジオ傑作回</h3></div></a></article>
+      <article class="video reveal"><a class="video-link" href="https://youtu.be/vtPU41os7r4" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/vtPU41os7r4/hqdefault.jpg" alt="歌ってみたのサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">Music</span><h3>歌ってみた</h3></div></a></article>
+      <article class="video reveal"><a class="video-link" href="https://youtu.be/Jf48xivIlcQ" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Jf48xivIlcQ/hqdefault.jpg" alt="自由研究Vlogのサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">Travel / Vlog</span><h3>自由研究Vlog</h3></div></a></article>
+    </div>
+    <div class="reveal" style="margin-top:40px;"><a class="more-link" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener">YouTubeチャンネルを見る</a></div>
+  </div>
+</section>
+
+<!-- ============ ON AIR SCHEDULE ============ -->
+<section id="onair">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">On Air</span>
+      <h2 class="sec-title"><span class="en">On Air Schedule</span>配信スケジュール</h2>
+    </div>
+    <div class="schedule-feature reveal" id="weeklySchedule">
+      <a id="weeklyScheduleLink" href="images/onair/2026-07-week-2.png" target="_blank" rel="noopener">
+        <img id="weeklyScheduleImage" src="images/onair/2026-07-week-2.png" alt="2026年7月2週の配信・出演スケジュール" width="1920" height="1080" loading="lazy">
+      </a>
+      <p class="schedule-caption"><strong id="weeklySchedulePeriod">2026年7月2週</strong><span id="weeklyScheduleNote">画像をタップすると原寸で確認できます。</span></p>
+      <div class="schedule-x">
+        <p>変更や追加のお知らせはXで随時更新しています。</p>
+        <a class="more-link" href="https://x.com/i_w_r_v" target="_blank" rel="noopener">Xで最新情報を見る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLUB（紙面） ============ -->
+<section id="club" class="paper">
+  <div class="container">
+    <div class="club-inner reveal">
+      <span class="st-label">Club</span>
+      <h2 class="sec-title"><span class="en">Club</span>もっと深く楽しみたい方へ</h2>
+      <p class="club-lead"><strong>Raidoriでは、日常ブログや限定配信、握手会など特典が沢山！</strong><br><strong>藍・W・楽歌をもっとディープに楽しみたい方はこちらへ。</strong></p>
+      <!-- ▼ RaidoriのURLに差し替え -->
+      <a class="btn btn-solid" href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener">Raidoriへ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR BUSINESS ============ -->
+<section id="business">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Business</span>
+      <h2 class="sec-title"><span class="en">For Business</span>一緒に、面白い番組を作りませんか。</h2>
+    </div>
+    <p class="biz-lead reveal">藍・W・楽歌は、歌、トーク、レトロゲーム、旅行、歴史・地理を軸に活動するVTuber / Virtual Broadcasterです。舞台役者、イベントMC、インターネットラジオDJなどの経験を活かし、配信・動画・イベント・ナレーション・PR企画など、幅広い内容に対応可能です。3Dモデルを活用したビジュアル展開にも対応し、企画内容に合わせた見せ方をご提案できます。</p>
+    <div class="biz-cols">
+      <div class="biz-block reveal">
+        <h3>Service</h3>
+        <ul class="biz-list">
+          <li>企業案件</li>
+          <li>商品紹介</li>
+          <li>観光PR</li>
+          <li>地域振興</li>
+          <li>ゲーム案件</li>
+          <li>イベント出演</li>
+          <li>ライブ出演</li>
+          <li>MC</li>
+          <li>ナレーション</li>
+          <li>タイアップ企画</li>
+          <li>コラボ企画</li>
+          <li>声劇・朗読</li>
+          <li>動画出演</li>
+          <li>サムネイル・告知素材展開</li>
+        </ul>
+      </div>
+      <div class="biz-block reveal">
+        <h3>Why AWR?</h3>
+        <ul class="biz-list single">
+          <li>舞台・MC経験を活かした進行力</li>
+          <li>インターネットラジオDJ由来のトーク力</li>
+          <li>歌・ライブ出演への対応</li>
+          <li>歴史・地理・旅行コンテンツとの親和性</li>
+          <li>レトロゲーム・音楽など大人向け趣味領域</li>
+          <li>落ち着いた視聴者層への訴求</li>
+          <li>3Dモデルによる配信・PR・イベント演出への対応</li>
+        </ul>
+      </div>
+    </div>
+    <div class="biz-cta reveal">
+      <a class="btn btn-solid" href="#contact">お仕事のご相談はこちら</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITY HISTORY ============ -->
+<section id="activity" class="paper">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Activity</span>
+      <h2 class="sec-title"><span class="en">Activity History</span>活動略歴・出演実績</h2>
+      <p class="sec-sub">配信活動、イベント出演、登録者達成など、これまでの主な活動実績です。</p>
+    </div>
+    <div class="history-list reveal">
+      <div class="history-row"><span class="history-date">2025.01.25</span><span class="history-text">藍・W・楽歌として初配信。</span></div>
+      <div class="history-row"><span class="history-date">2025.03.19</span><span class="history-text">YouTube登録者100人達成。</span></div>
+      <div class="history-row"><span class="history-date">2025.05</span><span class="history-text">歌枠リレー初出演。</span></div>
+      <div class="history-row"><span class="history-date">2025.07</span><a class="history-text history-link" href="https://youtube.com/live/6nmy546cdV4?feature=share" target="_blank" rel="noopener">デビュー半年記念として大規模声劇イベントを主催。出演者15名、最大同時接続46名を達成。</a></div>
+      <div class="history-row"><span class="history-date">2025.12</span><span class="history-text">YouTube登録者500人達成、収益化開始。</span></div>
+      <div class="history-row"><span class="history-date">2026.01</span><a class="history-text history-link" href="https://x.com/oiranoitalian/status/2006562075074875672?s=20" target="_blank" rel="noopener">リアルイベント、ディナーショーイベントに初出演。</a></div>
+      <div class="history-row"><span class="history-date">2026.05.29</span><span class="history-text">YouTube登録者1,000人達成。</span></div>
+      <div class="history-row"><span class="history-date">2026.08</span><a class="history-text history-link" href="https://x.com/BirdlimeTrap/status/2068650138445504903?s=20" target="_blank" rel="noopener">リアルライブイベント初出演予定。</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner reveal">
+      <span class="st-label">Contact</span>
+      <h2 class="sec-title"><span class="en">Contact</span>お問い合わせ</h2>
+      <p class="c-body">お仕事のご相談、出演依頼、コラボ、その他お問い合わせは、フォームまたはX DMよりご連絡ください。<br>企業案件、イベント出演、ライブ出演、ナレーション、MC、コラボ依頼、メディア出演、その他のお問い合わせに対応しています。<br>内容を確認のうえ、返信が必要なものに順次ご連絡いたします。</p>
+      <ul class="c-kinds">
+        <li>企業案件</li><li>イベント出演</li><li>ライブ出演</li><li>ナレーション</li><li>MC</li><li>コラボ依頼</li><li>メディア出演</li><li>その他</li>
+      </ul>
+      <div class="hero-cta" style="justify-content:center; margin-bottom:0;">
+        <a class="btn btn-solid" href="https://forms.gle/tPc6XtXfbnA2iaT76" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a class="btn btn-line" href="https://x.com/i_w_r_v" target="_blank" rel="noopener">X DMで相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHARACTER / LORE ============ -->
+<section id="lore" class="paper">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="st-label">Character / Lore</span>
+      <h2 class="sec-title"><span class="en">Character / Lore</span>藍・W・楽歌の詳しい設定</h2>
+      <p class="lore-lead">世を忍ぶ仮の姿で人間界を旅している、出身地不明・年齢不詳の男性。普段は自分の正体を人間に分かりやすく「神」と説明しているが、実際は別次元の宇宙からやって来た生命体らしい。</p>
+    </div>
+    <details class="lore-details reveal">
+      <summary>詳しい来歴を見る</summary>
+      <div class="lore-detail-body">
+        <div class="setting-grid">
+          <div class="setting-box">
+            <p>世を忍ぶ仮の姿で、人間界をふらふら旅している謎多き男性。</p>
+            <p>出身地不明。年齢不詳。</p>
+            <p>普段は自分の正体を、人間に分かりやすく「神」と説明しているが、実際は別次元の宇宙からやって来た生命体らしい。</p>
+          </div>
+          <div class="setting-box">
+            <p>故郷とはまるで違うこの地球を気に入り、有史以前からあちこちを旅しながら暮らしている。</p>
+            <p>特に日本文化、音楽、歴史に強い関心を持ち、現在は日本で、歌ったり、語ったり、旅をしたり、ゲームをしたりしている。</p>
+          </div>
+        </div>
+        <h3 class="mini-title">LORE TIMELINE</h3>
+        <div class="lore-timeline">
+          <div class="lore-row"><span class="lore-era">前3世紀</span><p>日本に初来日。大きな平野と湿地帯のある土地で王様ごっこをしていたが、飽きて旅立つ。</p></div>
+          <div class="lore-row"><span class="lore-era">2世紀</span><p>ローマで暮らす。水道橋の建設に関わっていたらしい。</p></div>
+          <div class="lore-row"><span class="lore-era">5〜6世紀</span><p>中国で禅にハマる。座禅中に皇帝を名乗る男から色々聞かれ、面倒になって行方をくらます。</p></div>
+          <div class="lore-row"><span class="lore-era">15〜16世紀</span><p>東欧で貴族ごっこをして暮らす。今の衣装はこの頃の名残。</p></div>
+          <div class="lore-row"><span class="lore-era">16〜17世紀</span><p>日本に渡来。南蛮物の目利きを買われ、堺で商人として暮らす。</p></div>
+          <div class="lore-row"><span class="lore-era">18〜19世紀</span><p>ロンドンで暮らす。紅茶は好きになれなかったが、蒸気機関には人類の成長を感じた。</p></div>
+          <div class="lore-row"><span class="lore-era">19世紀後半</span><p>ルーマニアで貴族ごっこをしていたところ、化け物と間違われる。危うく討伐されかけ、姿を消す。</p></div>
+          <div class="lore-row"><span class="lore-era">1980年代</span><p>再び日本へ。協力者の手引きで現代日本名と仮の戸籍を得て、さまざまな仕事に従事。</p></div>
+          <div class="lore-row"><span class="lore-era">2022年</span><p>バーチャル配信に興味を持ち、別の名前・別の姿で活動を開始。</p></div>
+          <div class="lore-row"><span class="lore-era">2025年</span><p>現在の姿で、趣味の配信活動を改めてスタート。</p></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer>
+  <div class="container">
+    <p class="foot-copy">あの頃のワクワクへ、ようこそ。</p>
+    <p class="foot-en">Thank you for tuning in.</p>
+    <p class="foot-jp">また次の放送で。</p>
+    <div class="foot-grid">
+      <a href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/i_w_r_v" target="_blank" rel="noopener">X</a>
+      <a href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener">Raidori</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-bottom">
+      <span class="credit">Illustration by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a></span>
+      <span class="cr">© 2026 藍・W・楽歌 / Ai Winston Rucker</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ナビ：スクロールで背景・固定切替
+  var nav = document.getElementById('siteNav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 40); };
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  // ハンバーガー
+  var burger = nav.querySelector('.burger');
+  burger.addEventListener('click', function(){
+    var open = nav.getAttribute('data-open') === 'true';
+    nav.setAttribute('data-open', String(!open));
+    burger.setAttribute('aria-expanded', String(!open));
+  });
+  nav.querySelectorAll('.nav-menu a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.setAttribute('data-open','false'); burger.setAttribute('aria-expanded','false'); });
+  });
+
+  // フェードイン（Intersection Observer）
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold:0.14 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    // ヒーロー：軽いパララックスのみ
+    var layers = document.querySelectorAll('.hero-bg .layer');
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      layers.forEach(function(l){
+        var s = parseFloat(l.getAttribute('data-parallax')) || 0.1;
+        l.style.transform = 'translateY(' + (y * s) + 'px)';
+      });
+    }, { passive:true });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // On Air：data/onair.jsonの内容を週次スケジュールへ反映
+  (function(){
+    var image = document.getElementById('weeklyScheduleImage');
+    var link = document.getElementById('weeklyScheduleLink');
+    var period = document.getElementById('weeklySchedulePeriod');
+    var note = document.getElementById('weeklyScheduleNote');
+    if(!image || !link || !period || !note){ return; }
+    fetch('data/onair.json')
+      .then(function(response){ if(!response.ok){ throw new Error('Unable to load schedule data'); } return response.json(); })
+      .then(function(data){
+        if(!data.image || !data.period || !data.alt){ return; }
+        image.src = data.image;
+        image.alt = data.alt;
+        link.href = data.image;
+        period.textContent = data.period;
+        note.textContent = data.note || '画像をタップすると原寸で確認できます。';
+      })
+      .catch(function(){});
+  })();
+
+</script>
+</body>
+</html>
