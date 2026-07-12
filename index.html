@@ -260,9 +260,10 @@
   .schedule-feature{ margin:0 0 56px; }
   .schedule-feature a{ display:block; color:inherit; }
   .schedule-feature img{ width:100%; max-height:720px; object-fit:contain; border:1px solid var(--hair); background:#111; }
-  .schedule-caption{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 22px; margin:16px 0 0; }
+  .schedule-caption{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 22px; margin:0 0 16px; }
   .schedule-caption strong{ font-family:var(--f-mincho); font-size:1.2rem; letter-spacing:.05em; }
   .schedule-caption span{ font-size:.86rem; color:var(--muted); }
+  .schedule-caption span:empty{ display:none; }
   .schedule-x{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 30px; margin-top:24px; padding-top:24px; border-top:1px solid var(--hair); }
   .schedule-x p{ margin:0; color:var(--muted); }
   .more-link{ font-family:var(--f-en); font-style:italic; font-size:1.2rem; letter-spacing:.04em; color:var(--gold); display:inline-flex; align-items:center; gap:12px; }
@@ -597,10 +598,10 @@
       <h2 class="sec-title"><span class="en">On Air Schedule</span>配信スケジュール</h2>
     </div>
     <div class="schedule-feature reveal" id="weeklySchedule">
+      <p class="schedule-caption"><strong id="weeklySchedulePeriod">2026年7月2週</strong><span id="weeklyScheduleNote"></span></p>
       <a id="weeklyScheduleLink" href="images/onair/2026-07-week-2.png" target="_blank" rel="noopener">
         <img id="weeklyScheduleImage" src="images/onair/2026-07-week-2.png" alt="2026年7月2週の配信・出演スケジュール" width="1920" height="1080" loading="lazy">
       </a>
-      <p class="schedule-caption"><strong id="weeklySchedulePeriod">2026年7月2週</strong><span id="weeklyScheduleNote">画像をタップすると原寸で確認できます。</span></p>
       <div class="schedule-x">
         <p>変更や追加のお知らせはXで随時更新しています。</p>
         <a class="more-link" href="https://x.com/i_w_r_v" target="_blank" rel="noopener">Xで最新情報を見る</a>
@@ -822,7 +823,7 @@
         image.alt = data.alt;
         link.href = data.image;
         period.textContent = data.period;
-        note.textContent = data.note || '画像をタップすると原寸で確認できます。';
+        note.textContent = typeof data.note === 'string' ? data.note : '';
       })
       .catch(function(){});
   })();
