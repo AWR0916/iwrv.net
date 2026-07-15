@@ -1,6 +1,6 @@
 # 藍・W・楽歌 Official Site - Codex引き継ぎ書
 
-最終更新: 2026-07-12
+最終更新: 2026-07-15
 
 ## 1. プロジェクト概要
 
@@ -94,18 +94,20 @@
 `index.html`は次の順序。
 
 1. Hero `#top`
-2. Profile `#profile`
-3. Contents `#contents`
-4. Radio Program `#radio-program`
-5. Archive `#archive`
-6. On Air Schedule `#onair`
-7. Xへの案内 `#news`
-8. Club `#club`
-9. Business `#business`
-10. Activity History `#activity`
-11. Contact `#contact`
-12. Lore `#lore`
-13. Footer
+2. Latest Update（Hero直後の最新1件）
+3. Profile `#profile`
+4. Contents `#contents`
+5. Radio Program `#radio-program`
+6. Archive `#archive`
+7. On Air Schedule `#onair`
+8. Xへの案内 `#news`
+9. Club `#club`
+10. Business `#business`
+11. Activity History `#activity`
+12. Contact `#contact`
+13. Lore `#lore`
+14. Site Updates `#site-updates`
+15. Footer
 
 上部メニューは日本語中心。
 
@@ -162,15 +164,23 @@
 
 - ラジオ傑作回: https://youtube.com/live/Mut930hbo2o?feature=share
 - 歌ってみた: https://youtu.be/vtPU41os7r4
-- 自由研究Vlog: https://youtu.be/Jf48xivIlcQ
+- お城巡りVlog: https://youtu.be/_eMl9SvEmck
 
 ### On Air Schedule
 
 - 4枚の予定カードは削除済み
 - 毎週作成するスケジュール画像を大きく表示する
 - 表示内容は`data/onair.json`から読み込む
-- 現在の画像: `images/onair/2026-07-week-2.png`
+- 現在の画像: `images/onair/2026-07-week-3.png`
 - 詳細な更新手順は`SCHEDULE_UPDATE.md`を参照
+
+### Site Updates
+
+- Hero直後に最新1件を1行で表示する
+- Footer直前に直近最大5件を表示する
+- 表示内容は`data/updates.json`から読み込む
+- スケジュール、動画、出演情報など、閲覧者に関係する更新だけを掲載する
+- Analytics設定や軽微な文言調整など、内部的な更新は掲載しない
 
 ### X / News
 
@@ -220,6 +230,7 @@
 - `robots.txt`: 全ページのクロールを許可し、サイトマップを指定
 - `sitemap.xml`: 正式URLを登録
 - `data/onair.json`: 週次スケジュール表示データ
+- `data/updates.json`: Hero直後とFooter直前に表示するサイト更新情報
 - `SCHEDULE_UPDATE.md`: スケジュール画像更新手順
 - `GOOGLE_FORM_TEMPLATE.md`: 問い合わせフォーム項目の控え
 - `images/ogp.jpg`: OGP画像、1200x630
@@ -249,9 +260,10 @@
 
 1. 画像を`images/onair/`へ週ごとの新しいファイル名で追加
 2. `data/onair.json`の`period`、`image`、`alt`、`note`を更新
-3. ローカルで画像パスとJSON構文を確認
-4. コミットして`main`へpush
-5. `https://iwrv.net/`で表示確認
+3. `data/updates.json`の先頭にスケジュール公開履歴を追加し、最大5件に保つ
+4. ローカルで画像パスとJSON構文を確認
+5. コミットして`main`へpush
+6. `https://iwrv.net/`で表示確認
 
 同じ画像名を上書きしない。ブラウザキャッシュで古い画像が残るのを防ぐため。
 
@@ -286,6 +298,7 @@ git push origin main
 - `href="#"`が残っていないこと
 - ローカル画像がすべて存在すること
 - `data/onair.json`がJSONとして読み込めること
+- `data/updates.json`がJSONとして読み込めること
 - `sitemap.xml`がXMLとして妥当であること
 - Heroと主要CTAが390px幅で収まること
 - Googleフォーム、Raidori、YouTube、X、代表動画が開くこと

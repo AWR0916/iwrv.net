@@ -192,6 +192,16 @@
   .scroll-cue{ position:absolute; left:32px; bottom:30px; z-index:2; font-family:var(--f-num); font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:14px; }
   .scroll-cue::after{ content:""; width:1px; height:40px; background:linear-gradient(var(--gold), transparent); }
 
+  /* 最新更新 */
+  .latest-update{ background:var(--bg-2); border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
+  .latest-update .container{ min-height:68px; display:flex; align-items:center; gap:24px; }
+  .latest-update-label{ flex:0 0 auto; font-family:var(--f-num); font-size:.66rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); }
+  .latest-update-link{ min-width:0; flex:1; display:flex; align-items:baseline; gap:18px; color:var(--text); }
+  .latest-update-link time{ flex:0 0 auto; font-family:var(--f-num); font-size:.78rem; letter-spacing:.08em; color:var(--muted); }
+  .latest-update-text{ min-width:0; font-size:.92rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .latest-update-arrow{ margin-left:auto; color:var(--gold); transition:transform .3s ease; }
+  .latest-update-link:hover .latest-update-arrow{ transform:translateX(5px); }
+
   /* ============ セクション共通 ============ */
   section{ padding:120px 0; position:relative; }
   .sec-head{ margin-bottom:56px; }
@@ -304,6 +314,18 @@
   .foot-bottom{ display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; padding-top:30px; }
   .foot-bottom .credit, .foot-bottom .cr{ font-family:var(--f-num); font-size:.72rem; letter-spacing:.06em; color:var(--muted); }
   .foot-bottom .credit a{ color:var(--gold); }
+
+  /* サイト更新情報 */
+  .site-updates{ padding:80px 0; background:var(--bg-2); }
+  .site-updates-head{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:30px; }
+  .site-updates-head h2{ font-family:var(--f-mincho); font-size:1.5rem; letter-spacing:.08em; }
+  .site-updates-head span{ font-family:var(--f-en); font-style:italic; color:var(--gold); }
+  .updates-list{ list-style:none; margin:0; padding:0; border-top:1px solid var(--hair); }
+  .updates-list li{ border-bottom:1px solid var(--hair); }
+  .updates-list a{ display:grid; grid-template-columns:140px 1fr auto; gap:22px; align-items:center; padding:17px 8px; color:var(--text); }
+  .updates-list time{ font-family:var(--f-num); font-size:.78rem; letter-spacing:.08em; color:var(--muted); }
+  .updates-list .update-arrow{ color:var(--gold); transition:transform .3s ease; }
+  .updates-list a:hover .update-arrow{ transform:translateX(5px); }
 
   @media (prefers-reduced-motion: reduce){ .onair .lamp{ animation:none; } }
 
@@ -420,6 +442,14 @@
     .hero-inner{ gap:24px; }
     .hero-portrait{ max-width:150px; }
     .schedule-x{ align-items:flex-start; flex-direction:column; }
+    .latest-update .container{ min-height:0; padding-block:14px; align-items:flex-start; gap:10px; flex-direction:column; }
+    .latest-update-link{ width:100%; gap:10px; flex-wrap:wrap; }
+    .latest-update-text{ width:calc(100% - 28px); white-space:normal; }
+    .site-updates{ padding:64px 0; }
+    .site-updates-head{ display:block; }
+    .site-updates-head span{ display:block; margin-top:4px; }
+    .updates-list a{ grid-template-columns:1fr auto; gap:8px 14px; padding:16px 4px; }
+    .updates-list time{ grid-column:1 / -1; }
   }
 </style>
 </head>
@@ -490,6 +520,18 @@
 
   <div class="scroll-cue" aria-hidden="true">Scroll</div>
 </section>
+
+<!-- ============ LATEST UPDATE ============ -->
+<aside class="latest-update" aria-label="最新のサイト更新情報">
+  <div class="container">
+    <span class="latest-update-label">Latest Update</span>
+    <a class="latest-update-link" id="latestUpdateLink" href="#archive">
+      <time id="latestUpdateDate" datetime="2026-07-15">2026.07.15</time>
+      <span class="latest-update-text" id="latestUpdateText">放送アーカイブ「お城巡りVlog」 UP</span>
+      <span class="latest-update-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</aside>
 
 <!-- ============ PROFILE ============ -->
 <section id="profile" class="paper">
@@ -584,7 +626,7 @@
     <div class="video-grid">
       <article class="video reveal"><a class="video-link" href="https://youtube.com/live/Mut930hbo2o?feature=share" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Mut930hbo2o/hqdefault.jpg" alt="ラジオ傑作回のサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">AlternativeRadio</span><h3>ラジオ傑作回</h3></div></a></article>
       <article class="video reveal"><a class="video-link" href="https://youtu.be/vtPU41os7r4" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/vtPU41os7r4/hqdefault.jpg" alt="歌ってみたのサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">Music</span><h3>歌ってみた</h3></div></a></article>
-      <article class="video reveal"><a class="video-link" href="https://youtu.be/Jf48xivIlcQ" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/Jf48xivIlcQ/hqdefault.jpg" alt="自由研究Vlogのサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">Travel / Vlog</span><h3>自由研究Vlog</h3></div></a></article>
+      <article class="video reveal"><a class="video-link" href="https://youtu.be/_eMl9SvEmck" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/_eMl9SvEmck/hqdefault.jpg" alt="お城巡りVlogのサムネイル" loading="lazy"></div><div class="vmeta"><span class="vcat">Travel / Vlog</span><h3>お城巡りVlog</h3></div></a></article>
     </div>
     <div class="reveal" style="margin-top:40px;"><a class="more-link" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener">YouTubeチャンネルを見る</a></div>
   </div>
@@ -749,6 +791,21 @@
   </div>
 </section>
 
+<!-- ============ SITE UPDATES ============ -->
+<section id="site-updates" class="site-updates">
+  <div class="container">
+    <div class="site-updates-head reveal">
+      <h2>サイト更新情報</h2>
+      <span>Site Updates</span>
+    </div>
+    <ul class="updates-list reveal" id="siteUpdatesList">
+      <li><a href="#archive"><time datetime="2026-07-15">2026.07.15</time><span>放送アーカイブ「お城巡りVlog」 UP</span><span class="update-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#onair"><time datetime="2026-07-13">2026.07.13</time><span>7月3週の配信スケジュールを公開</span><span class="update-arrow" aria-hidden="true">→</span></a></li>
+      <li><a href="#top"><time datetime="2026-07-12">2026.07.12</time><span>公式サイトを更新</span><span class="update-arrow" aria-hidden="true">→</span></a></li>
+    </ul>
+  </div>
+</section>
+
 </main>
 
 <!-- ============ フッター ============ -->
@@ -824,6 +881,49 @@
         link.href = data.image;
         period.textContent = data.period;
         note.textContent = typeof data.note === 'string' ? data.note : '';
+      })
+      .catch(function(){});
+  })();
+
+  // Site Updates：最新1件と直近5件を同じデータから表示
+  (function(){
+    var latestLink = document.getElementById('latestUpdateLink');
+    var latestDate = document.getElementById('latestUpdateDate');
+    var latestText = document.getElementById('latestUpdateText');
+    var updatesList = document.getElementById('siteUpdatesList');
+    if(!latestLink || !latestDate || !latestText || !updatesList){ return; }
+
+    var renderUpdateLink = function(item){
+      var link = document.createElement('a');
+      var date = document.createElement('time');
+      var text = document.createElement('span');
+      var arrow = document.createElement('span');
+      link.href = item.href || '#site-updates';
+      date.dateTime = item.date;
+      date.textContent = item.displayDate;
+      text.textContent = item.text;
+      arrow.className = 'update-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '→';
+      link.append(date, text, arrow);
+      return link;
+    };
+
+    fetch('data/updates.json')
+      .then(function(response){ if(!response.ok){ throw new Error('Unable to load site updates'); } return response.json(); })
+      .then(function(data){
+        var items = Array.isArray(data.items) ? data.items.filter(function(item){ return item.date && item.displayDate && item.text; }).slice(0, 5) : [];
+        if(!items.length){ return; }
+        latestLink.href = items[0].href || '#site-updates';
+        latestDate.dateTime = items[0].date;
+        latestDate.textContent = items[0].displayDate;
+        latestText.textContent = items[0].text;
+        updatesList.textContent = '';
+        items.forEach(function(item){
+          var row = document.createElement('li');
+          row.appendChild(renderUpdateLink(item));
+          updatesList.appendChild(row);
+        });
       })
       .catch(function(){});
   })();
