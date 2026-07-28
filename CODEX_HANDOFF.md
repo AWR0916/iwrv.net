@@ -6,7 +6,7 @@
 
 - サイト名: 藍・W・楽歌 Official Site
 - 英語名: Ai Winston Rucker
-- サイトコンセプト: AWR - After Work Radio
+- サイトコンセプト: AWR — 大人になっても、遊び足りない。
 - 目的: YouTubeチャンネル登録、Raidoriファンクラブ登録、企業案件・イベント出演の問い合わせ獲得
 - 本番URL: https://iwrv.net/
 - GitHub Pages URL: https://awr0916.github.io/iwrv.net/

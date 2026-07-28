@@ -14,8 +14,8 @@
 </script>
 
 <!-- ▼▼▼ SEO / OGP：URL・画像は公開先に合わせて差し替え ▼▼▼ -->
-<title>藍・W・楽歌 Official Site ｜ AWR - After Work Radio</title>
-<meta name="description" content="藍・W・楽歌（Ai Winston Rucker）は、ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動する男性VTuber / Virtual Broadcaster。舞台役者、イベントMC、インターネットラジオDJの経験を活かし、大人の趣味時間を届けています。">
+<title>藍・W・楽歌 Official Site ｜ AWR — 大人になっても、遊び足りない。</title>
+<meta name="description" content="藍・W・楽歌（Ai Winston Rucker）は、ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動する男性VTuber / Virtual Entertainer。舞台役者、イベントMC、インターネットラジオDJの経験を活かし、大人の趣味時間を届けています。">
 <link rel="canonical" href="https://iwrv.net/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="藍・W・楽歌 Official Site ｜ あの頃のワクワクへ、ようこそ。">
@@ -40,15 +40,15 @@
     {
       "@type": "WebSite",
       "name": "藍・W・楽歌 Official Site",
-      "alternateName": "AWR - After Work Radio",
+      "alternateName": "AWR — 大人になっても、遊び足りない。",
       "url": "https://iwrv.net/",
-      "description": "藍・W・楽歌（Ai Winston Rucker）の公式サイト。ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動するVTuber / Virtual Broadcaster。"
+      "description": "藍・W・楽歌（Ai Winston Rucker）の公式サイト。ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動するVTuber / Virtual Entertainer。"
     },
     {
       "@type": "Person",
       "name": "藍・W・楽歌",
       "alternateName": "Ai Winston Rucker",
-      "jobTitle": "Virtual Broadcaster / VTuber",
+      "jobTitle": "Virtual Entertainer / VTuber",
       "url": "https://iwrv.net/",
       "sameAs": [
         "https://x.com/i_w_r_v"
@@ -336,6 +336,7 @@
   .hero-name b{ color:var(--gold); font-weight:800; }
   .hero-site{ font-family:var(--f-num); font-size:.68rem; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
   .hero-concept{ font-family:var(--f-en); font-style:italic; font-size:clamp(1.25rem,2.8vw,1.9rem); letter-spacing:.08em; color:var(--gold); margin:0 0 26px; }
+  .hero-concept .phrase{ white-space:nowrap; }
 
   .profile-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:start; margin-bottom:76px; }
   .profile-lead{ font-family:var(--f-mincho); font-weight:500; font-size:1.22rem; line-height:2.05; color:var(--ink); margin:0; }
@@ -438,9 +439,57 @@
     section{ padding:88px 0; }
   }
   @media (max-width:520px){
+    body{ overflow-x:hidden; }
     .container{ padding-inline:22px; }
-    .hero-inner{ gap:24px; }
-    .hero-portrait{ max-width:150px; }
+    .hero{
+      min-height:auto;
+      padding:100px 0 72px;
+    }
+    .hero-inner{
+      display:block;
+      min-height:0;
+    }
+    .hero-inner > div:first-child{
+      position:relative;
+      z-index:2;
+      padding-top:300px;
+    }
+    .hero-portrait{
+      position:absolute;
+      z-index:0;
+      top:-24px;
+      right:-92px;
+      width:390px;
+      max-width:none;
+      height:430px;
+      aspect-ratio:auto;
+      margin:0;
+      pointer-events:none;
+    }
+    .hero-portrait .frame{
+      height:100%;
+      overflow:hidden;
+      -webkit-mask-image:linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%);
+      mask-image:linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%);
+    }
+    .hero-portrait img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 8%;
+      padding:0;
+      transform:scale(1.08);
+      transform-origin:center top;
+    }
+    .hero-portrait .cap{ display:none; }
+    .hero-overlay{
+      background:
+        linear-gradient(180deg, rgba(25,25,25,.42) 0%, rgba(25,25,25,.6) 38%, rgba(25,25,25,.96) 65%, rgba(25,25,25,.98) 100%),
+        linear-gradient(90deg, rgba(25,25,25,.48), rgba(25,25,25,.12));
+    }
+    .hero-name,
+    .hero-concept,
+    .hero-catch{ text-shadow:0 3px 18px rgba(0,0,0,.7); }
     .schedule-x{ align-items:flex-start; flex-direction:column; }
     .latest-update .container{ min-height:0; padding-block:14px; align-items:flex-start; gap:10px; flex-direction:column; }
     .latest-update-link{ width:100%; gap:10px; flex-wrap:wrap; }
@@ -450,6 +499,13 @@
     .site-updates-head span{ display:block; margin-top:4px; }
     .updates-list a{ grid-template-columns:1fr auto; gap:8px 14px; padding:16px 4px; }
     .updates-list time{ grid-column:1 / -1; }
+  }
+  @media (max-width:360px){
+    .brand{ gap:9px; }
+    .brand .awr{ font-size:1.25rem; letter-spacing:.1em; }
+    .brand .bn{ font-size:.52rem; letter-spacing:.16em; }
+    .hero-name{ font-size:clamp(2.2rem,12vw,2.9rem); letter-spacing:.08em; }
+    .hero-portrait{ right:-108px; }
   }
 </style>
 </head>
@@ -491,7 +547,7 @@
     <div>
       <p class="hero-site">Official Site</p>
       <h1 class="hero-name">藍・<b>W</b>・楽歌</h1>
-      <p class="hero-concept">AWR - After Work Radio</p>
+      <p class="hero-concept">AWR — 大人になっても、<span class="phrase">遊び足りない。</span></p>
       <p class="hero-catch">あの頃のワクワクへ、ようこそ。</p>
       <p class="hero-sub">仕事終わりに、少しだけ寄り道を。<br>ラジオのように話し、ロックを歌い、レトロゲームを遊び、旅先で歴史と地理を巡る。<br>大人のための趣味時間をお届けしています。</p>
       <div class="hero-cta">
@@ -546,7 +602,7 @@
         <div class="rule-gold" style="margin-bottom:28px;"></div>
         <div class="profile-lead">
           <p><strong>藍・W・楽歌</strong><br><span style="font-family:var(--f-en);font-style:italic;color:var(--purple);">Ai Winston Rucker</span></p>
-          <p>歌とお芝居、ゲーム、旅行、歴史・地理が好きな男性VTuber / Virtual Broadcaster。</p>
+          <p>歌とお芝居、ゲーム、旅行、歴史・地理が好きな男性VTuber / Virtual Entertainer。</p>
           <p>舞台役者、イベントMC、インターネットラジオDJなどの経験を持ち、現在はVTuberとして、トーク、歌、レトロゲーム実況、旅行、歴史・地理をテーマに活動しています。</p>
           <p>仕事終わりにふらっと立ち寄れる場所。昔好きだったものを、今の自分でもう一度楽しめる時間。そんな“大人の趣味時間”をお届けしています。</p>
         </div>
@@ -672,7 +728,7 @@
       <span class="st-label">Business</span>
       <h2 class="sec-title"><span class="en">For Business</span>一緒に、面白い番組を作りませんか。</h2>
     </div>
-    <p class="biz-lead reveal">藍・W・楽歌は、歌、トーク、レトロゲーム、旅行、歴史・地理を軸に活動するVTuber / Virtual Broadcasterです。舞台役者、イベントMC、インターネットラジオDJなどの経験を活かし、配信・動画・イベント・ナレーション・PR企画など、幅広い内容に対応可能です。3Dモデルを活用したビジュアル展開にも対応し、企画内容に合わせた見せ方をご提案できます。</p>
+    <p class="biz-lead reveal">藍・W・楽歌は、歌、トーク、レトロゲーム、旅行、歴史・地理を軸に活動するVTuber / Virtual Entertainerです。舞台役者、イベントMC、インターネットラジオDJなどの経験を活かし、配信・動画・イベント・ナレーション・PR企画など、幅広い内容に対応可能です。3Dモデルを活用したビジュアル展開にも対応し、企画内容に合わせた見せ方をご提案できます。</p>
     <div class="biz-cols">
       <div class="biz-block reveal">
         <h3>Service</h3>
