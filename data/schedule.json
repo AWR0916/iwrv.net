@@ -1,0 +1,56 @@
+{
+  "period": "2026年8月4週",
+  "range": "2026.08.24 — 08.30",
+  "image": "images/onair/2026-08-week-4.png",
+  "alt": "2026年8月24日から8月30日までの配信・出演スケジュール",
+  "note": "",
+  "days": [
+    {
+      "date": "24",
+      "dow": "MON",
+      "time": "21:00",
+      "title": "AlternativeRadio #25",
+      "genre": "雑学・音楽・近況",
+      "kind": "radio"
+    },
+    {
+      "date": "25",
+      "dow": "TUE",
+      "time": "21:00",
+      "title": "LIVE2D お披露目配信",
+      "genre": "特番",
+      "kind": "sp"
+    },
+    {
+      "date": "26",
+      "dow": "WED",
+      "time": "21:00",
+      "title": "声劇コラボ Withシマエナガ",
+      "genre": "声劇",
+      "kind": "radio"
+    },
+    {
+      "date": "27",
+      "dow": "THU",
+      "off": "おやすみ"
+    },
+    {
+      "date": "28",
+      "dow": "FRI",
+      "time": "20:00",
+      "title": "DQ6 仲間モンスターコンプの旅 #6",
+      "genre": "レトロゲーム",
+      "kind": "game"
+    },
+    {
+      "date": "29",
+      "dow": "SAT",
+      "off": "おやすみ"
+    },
+    {
+      "date": "30",
+      "dow": "SUN",
+      "off": "未定"
+    }
+  ]
+}

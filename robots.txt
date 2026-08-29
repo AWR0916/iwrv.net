@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /_backup/
+Disallow: /index-preview.html
 
 Sitemap: https://iwrv.net/sitemap.xml
