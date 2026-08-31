@@ -39,7 +39,7 @@
 | `time` | 開始時刻 | `21:00` |
 | `title` | 番組名 | `AlternativeRadio #26` |
 | `genre` | 小さく出るジャンル名 | `雑学・音楽・近況` |
-| `kind` | 左の色棒の色 | `radio`（紫）／`sp`（金）／`game`（緑） |
+| `kind` | 左の色棒の色 | `radio`（紫・ラジオ）／`sing`（ローズ・歌枠）／`act`（青・声劇）／`game`（緑・ゲーム/Vlog）／`sp`（金・特番） |
 | `off` | 放送がない日 | `"off": "おやすみ"` または `"off": "未定"` |
 
 **放送がない日は `time` `title` `genre` `kind` を書かず、`off` だけにします。**

@@ -65,8 +65,8 @@
     });
   }
 
-  var KIND_CLASS = { radio: 'radio', sp: 'sp', game: 'game' };
-  var KIND_SWATCH = { radio: 'sw-radio', sp: 'sw-sp', game: 'sw-game' };
+  var KIND_CLASS = { radio: 'radio', sing: 'sing', act: 'act', game: 'game', sp: 'sp' };
+  var KIND_SWATCH = { radio: 'sw-radio', sing: 'sw-sing', act: 'sw-act', game: 'sw-game', sp: 'sw-sp' };
 
   /* ---------------- 番組表 ---------------- */
   function renderWeek(data) {

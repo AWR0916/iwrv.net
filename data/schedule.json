@@ -1,56 +1,14 @@
 {
-  "period": "2026年8月4週",
-  "range": "2026.08.24 — 08.30",
-  "image": "images/onair/2026-08-week-4.png",
-  "alt": "2026年8月24日から8月30日までの配信・出演スケジュール",
+  "period": "2026年9月1週",
+  "range": "2026.08.31 — 09.06",
   "note": "",
   "days": [
-    {
-      "date": "24",
-      "dow": "MON",
-      "time": "21:00",
-      "title": "AlternativeRadio #25",
-      "genre": "雑学・音楽・近況",
-      "kind": "radio"
-    },
-    {
-      "date": "25",
-      "dow": "TUE",
-      "time": "21:00",
-      "title": "LIVE2D お披露目配信",
-      "genre": "特番",
-      "kind": "sp"
-    },
-    {
-      "date": "26",
-      "dow": "WED",
-      "time": "21:00",
-      "title": "声劇コラボ Withシマエナガ",
-      "genre": "声劇",
-      "kind": "radio"
-    },
-    {
-      "date": "27",
-      "dow": "THU",
-      "off": "おやすみ"
-    },
-    {
-      "date": "28",
-      "dow": "FRI",
-      "time": "20:00",
-      "title": "DQ6 仲間モンスターコンプの旅 #6",
-      "genre": "レトロゲーム",
-      "kind": "game"
-    },
-    {
-      "date": "29",
-      "dow": "SAT",
-      "off": "おやすみ"
-    },
-    {
-      "date": "30",
-      "dow": "SUN",
-      "off": "未定"
-    }
+    { "date": "31", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #26", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "1",  "dow": "TUE", "time": "18:00", "title": "歌枠！", "kind": "sing" },
+    { "date": "2",  "dow": "WED", "time": "21:00", "title": "声劇with高嶋アラタ", "kind": "act" },
+    { "date": "3",  "dow": "THU", "off": "おやすみ" },
+    { "date": "4",  "dow": "FRI", "time": "未定", "title": "歌枠予定", "kind": "sing" },
+    { "date": "5",  "dow": "SAT", "time": "22:00", "title": "声劇参加（IRIAM）", "kind": "act" },
+    { "date": "6",  "dow": "SUN", "off": "おやすみ" }
   ]
 }
