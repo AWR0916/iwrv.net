@@ -65,8 +65,11 @@
     });
   }
 
-  var KIND_CLASS = { radio: 'radio', sing: 'sing', act: 'act', game: 'game', sp: 'sp' };
-  var KIND_SWATCH = { radio: 'sw-radio', sing: 'sw-sing', act: 'sw-act', game: 'sw-game', sp: 'sw-sp' };
+  var KIND_CLASS = { radio: 'radio', sing: 'sing', act: 'act', game: 'game', vlog: 'vlog', sp: 'sp' };
+  var KIND_SWATCH = {
+    radio: 'sw-radio', sing: 'sw-sing', act: 'sw-act',
+    game: 'sw-game', vlog: 'sw-vlog', sp: 'sw-sp'
+  };
 
   /* ---------------- 番組表 ---------------- */
   function renderWeek(data) {

@@ -27,6 +27,7 @@
   --gold-ink:   #8E7333;   /* 紙面の細い線・小さな面用（紙地で4.0:1） */
   --rose:       #A3456B;   /* 番組表：歌枠（紙地で5.15:1） */
   --blue:       #3F6491;   /* 番組表：声劇（紙地で5.41:1） */
+  --moss:       #3A6B30;   /* 番組表：旅・Vlog（紙地で5.60:1） */
   --teal:       #4F7A73;
   --danger-p:   #A34B4B;   /* 紙面のOn Air赤（紙地で5.1:1） */
   --danger-d:   #CE7676;   /* ダーク面のOn Air赤 */
@@ -178,6 +179,7 @@ section[id], [id]:target{ scroll-margin-top:80px; }
 .sw-sing{ background:var(--rose); }
 .sw-act{ background:var(--blue); }
 .sw-game{ background:var(--teal); }
+.sw-vlog{ background:var(--moss); }
 .sw-sp{ background:var(--gold-ink); }
 
 .week{
@@ -195,6 +197,7 @@ section[id], [id]:target{ scroll-margin-top:80px; }
 .prog.sing{ border-left-color:var(--rose); }
 .prog.act{ border-left-color:var(--blue); }
 .prog.game{ border-left-color:var(--teal); }
+.prog.vlog{ border-left-color:var(--moss); }
 .prog.sp{ border-left-color:var(--gold-ink); }
 .prog .time{ font-family:var(--f-num); font-size:.78rem; color:var(--purple); letter-spacing:.06em; }
 .prog .ttl{ font-family:var(--f-mincho); font-size:.9rem; font-weight:600; margin-top:6px; line-height:1.7; }
