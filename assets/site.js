@@ -122,15 +122,22 @@
         list.appendChild(li);
       });
 
-      var offs = days.filter(function (d) { return d.off; });
-      if (offs.length) {
+      /* 放送のない日は同じ文言ごとにまとめる（「おやすみ」と「未定」は別行） */
+      var labels = [];
+      var byLabel = {};
+      days.filter(function (d) { return d.off; }).forEach(function (d) {
+        var key = String(d.off);
+        if (!byLabel[key]) { byLabel[key] = []; labels.push(key); }
+        byLabel[key].push(d.date);
+      });
+      labels.forEach(function (key) {
         var li2 = document.createElement('li');
         var row2 = el('div', 'row');
-        row2.appendChild(el('span', 'date', offs.map(function (d) { return d.date; }).join('・')));
-        row2.appendChild(el('span', 'ttl', 'おやすみ'));
+        row2.appendChild(el('span', 'date', byLabel[key].join('・')));
+        row2.appendChild(el('span', 'ttl', key));
         li2.appendChild(row2);
         list.appendChild(li2);
-      }
+      });
     }
   }
 
