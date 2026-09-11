@@ -13,7 +13,7 @@
   gtag('config', 'G-VVWD41VGYM');
 </script>
 
-<title>藍・W・楽歌 Official Site ｜ AWR — 大人になっても、遊び足りない。</title>
+<title>藍・W・楽歌 Official Site ｜ 大人になっても、遊び足りない。</title>
 <meta name="description" content="藍・W・楽歌（Ai Winston Rucker）は、ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動する男性VTuber / Virtual Entertainer。舞台役者、イベントMC、インターネットラジオDJの経験を活かし、大人の趣味時間を届けています。">
 <link rel="canonical" href="https://iwrv.net/">
 
@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="藍・W・楽歌 Official Site ｜ あの頃のワクワクへ、ようこそ。">
+<meta property="og:title" content="藍・W・楽歌 Official Site ｜ 大人になっても、遊び足りない。">
 <meta property="og:description" content="仕事終わりに、少しだけ寄り道を。歌、ラジオ、レトロゲーム、旅、歴史・地理を届けるVTuber・藍・W・楽歌の公式サイト。">
 <meta property="og:image" content="https://iwrv.net/images/ogp-2026.jpg">
 <meta property="og:image:width" content="1200">
@@ -38,6 +38,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/cover-radio.webp" imagesrcset="images/cover-radio-sp.webp 760w, images/cover-radio.webp 1400w" imagesizes="(max-width:760px) 100vw, 44vw" fetchpriority="high">
+<script>
+/* 描画前に保存済みの文字サイズを当てる（切替時のちらつき防止） */
+(function(){try{var v=localStorage.getItem('awr-fontsize');
+if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){}})();
+</script>
 <link rel="stylesheet" href="assets/site.css">
 
 <script type="application/ld+json">
@@ -47,7 +52,7 @@
     {
       "@type": "WebSite",
       "name": "藍・W・楽歌 Official Site",
-      "alternateName": "AWR — 大人になっても、遊び足りない。",
+      "alternateName": "大人になっても、遊び足りない。",
       "url": "https://iwrv.net/",
       "description": "藍・W・楽歌（Ai Winston Rucker）の公式サイト。ラジオ、ロックンロール、レトロゲーム、旅、歴史・地理をテーマに活動するVTuber / Virtual Entertainer。"
     },
@@ -105,6 +110,17 @@
   </div>
 </header>
 
+<!-- ============ 文字サイズ切替 ============ -->
+<div class="fontsize-bar">
+  <div class="wrap fontsize-inner">
+    <span class="fontsize-label" id="fsLabel">文字サイズ</span>
+    <div class="fontsize-ctrl" role="group" aria-labelledby="fsLabel">
+      <button type="button" class="fs-btn" data-fontsize="m" aria-pressed="true">標準</button>
+      <button type="button" class="fs-btn" data-fontsize="l" aria-pressed="false">大</button>
+    </div>
+  </div>
+</div>
+
 <main id="main">
 
 <!-- ============ マストヘッド ============ -->
@@ -112,7 +128,7 @@
   <div class="masthead-inner">
     <h1>藍・<b>W</b>・楽歌</h1>
     <div class="masthead-sub">
-      <p class="concept">AWR — 大人になっても、遊び足りない。</p>
+      <p class="concept">大人になっても、遊び足りない。</p>
       <p class="issue" id="issueRange">2026.09.07 — 09.13 ／ WEEKLY SCHEDULE</p>
     </div>
     <div class="next-onair">
@@ -379,7 +395,7 @@
       </nav>
     </div>
     <div class="foot-bottom">
-      <span>Illustration by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a></span>
+      <span>Illustration &amp; Key visual by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a> ／ Live2D by <a href="https://x.com/ikada_nami" target="_blank" rel="noopener">@ikada_nami</a></span>
       <span>© 2026 藍・W・楽歌 / Ai Winston Rucker</span>
     </div>
   </div>

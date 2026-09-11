@@ -10,7 +10,7 @@
   --paper-2:    #EFEADE;
   --paper-3:    #E4DCCA;
   --ink:        #23201A;
-  --muted-p:    #6E675C;
+  --muted-p:    #565048;   /* 紙面の副次テキスト（紙地7.07:1 / tint 6.63:1） */
   --hair-p:     #D8D0BE;
 
   /* ダーク面 */
@@ -42,8 +42,10 @@
 }
 
 *{ box-sizing:border-box; }
-/* 老眼・小さい文字対策：ルートを17pxに上げ、全体を底上げする */
+/* 文字サイズ：既定は「標準」（17px）。ヘッダーの切替ボタンで「大」に変わる */
 html{ scroll-behavior:smooth; font-size:106.25%; }
+html[data-fontsize="m"]{ font-size:106.25%; } /* 標準 17px */
+html[data-fontsize="l"]{ font-size:125%; }    /* 大   20px */
 body{
   margin:0; background:var(--paper); color:var(--ink);
   font-family:var(--f-body); font-weight:400; line-height:1.9;
@@ -73,6 +75,26 @@ a.sr-only:focus, a.sr-only:focus-visible{
   background:var(--paper); color:var(--ink); border:1px solid var(--ink);
   font-size:.99rem; font-weight:600;
 }
+
+/* ============ 文字サイズ切替バー ============ */
+.fontsize-bar{ background:var(--paper-2); border-bottom:1px solid var(--hair-p); }
+.fontsize-inner{ display:flex; align-items:center; justify-content:flex-end; gap:12px; padding-block:7px; }
+.fontsize-label{ font-size:.858rem; color:var(--muted-p); }
+.fontsize-ctrl{ display:flex; gap:6px; }
+.fontsize-ctrl button{
+  font-family:var(--f-body); font-size:.935rem; line-height:1;
+  min-width:44px; min-height:36px; padding:8px 12px; cursor:pointer;
+  background:var(--paper); color:var(--muted-p);
+  border:1px solid var(--hair-p); border-radius:2px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.fontsize-ctrl button:hover{ color:var(--ink); border-color:var(--ink); }
+.fontsize-ctrl button[aria-pressed="true"]{
+  background:var(--ink); color:var(--paper); border-color:var(--ink); font-weight:700;
+}
+
+/* 読む文章はゴシック（--f-body）を使う。明朝は横画が細く、加齢による
+   細部コントラスト感度の低下を受けやすいため。見出し・誌名は明朝のまま。 */
 
 /* 小見出しラベル */
 .eyebrow{
@@ -134,7 +156,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .next-onair .lbl{ display:flex; align-items:center; gap:9px; justify-content:flex-end; }
 .next-onair .lamp{ width:8px; height:8px; border-radius:50%; background:var(--danger-p); }
 .next-onair .cap{ font-family:var(--f-num); font-size:.78rem; letter-spacing:.22em; color:var(--danger-p); }
-.next-onair .val{ font-family:var(--f-mincho); font-size:1.06rem; font-weight:600; margin-top:6px; }
+.next-onair .val{ font-family:var(--f-body); font-size:1.06rem; font-weight:500; margin-top:6px; }
 
 /* ============ 表紙 ============ */
 .cover{ display:grid; grid-template-columns:1fr 620px; border-bottom:1px solid var(--hair-p); }
@@ -208,9 +230,9 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .prog.vlog{ border-left-color:var(--moss); }
 .prog.sp{ border-left-color:var(--gold-ink); }
 .prog .time{ font-family:var(--f-num); font-size:.858rem; color:var(--purple); letter-spacing:.06em; }
-.prog .ttl{ font-family:var(--f-mincho); font-size:.99rem; font-weight:600; margin-top:6px; line-height:1.7; }
+.prog .ttl{ font-family:var(--f-body); font-size:.99rem; font-weight:500; margin-top:6px; line-height:1.75; }
 .prog .gen{ font-size:.825rem; color:var(--muted-p); margin-top:7px; line-height:1.7; }
-.day .off-txt{ margin-top:14px; padding-left:14px; font-family:var(--f-mincho); font-size:.99rem; color:var(--muted-p); }
+.day .off-txt{ margin-top:14px; padding-left:14px; font-family:var(--f-body); font-size:.99rem; color:var(--muted-p); }
 .programme-foot{ display:flex; align-items:center; gap:20px; margin-top:14px; flex-wrap:wrap; }
 .programme-foot p{ font-size:.902rem; color:var(--muted-p); }
 .more{ font-family:var(--f-en); font-style:italic; font-size:1.05rem; color:var(--purple); }
@@ -230,7 +252,11 @@ a.sr-only:focus, a.sr-only:focus-visible{
 }
 .week-list .dow{ font-family:var(--f-num); font-size:.78rem; letter-spacing:.1em; color:var(--muted-p); }
 .week-list .time{ font-family:var(--f-num); font-size:.858rem; color:var(--purple); font-variant-numeric:tabular-nums; }
-.week-list .ttl{ min-width:0; font-family:var(--f-mincho); font-size:.99rem; font-weight:600; line-height:1.6; }
+.week-list .ttl{
+  min-width:0; font-family:var(--f-body); font-size:.99rem; font-weight:500; line-height:1.7;
+  /* 「AlternativeRadio」のような分割できない欧文が桁あふれを起こすため */
+  overflow-wrap:anywhere;
+}
 .week-list .dot{ width:9px; height:9px; align-self:start; margin-top:6px; }
 .week-list li.off .date{ color:var(--muted-p); font-weight:500; }
 .week-list li.off .ttl{ color:var(--muted-p); font-weight:500; }
@@ -269,7 +295,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .cell:first-child{ padding-left:0; }
 .cell:last-child{ padding-right:0; border-right:0; }
 .cell .en{ font-family:var(--f-en); font-style:italic; font-size:1.2rem; color:var(--purple); }
-.cell h3{ font-family:var(--f-mincho); font-size:1rem; font-weight:700; margin-top:8px; }
+.cell h3{ font-family:var(--f-body); font-size:1rem; font-weight:700; margin-top:8px; }
 .cell .body{ font-size:.935rem; line-height:2.05; color:var(--muted-p); margin-top:12px; }
 .cell .step{ font-family:var(--f-num); font-size:.825rem; letter-spacing:.16em; color:var(--gold-ink); }
 
@@ -287,12 +313,12 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .card-fig img{ height:280px; width:auto; margin-top:-10px; }
 .card-body{ padding:16px 18px 18px; }
 .card-body .en{ font-family:var(--f-num); font-size:.78rem; letter-spacing:.18em; color:var(--purple); }
-.card-body h3{ font-family:var(--f-mincho); font-size:1.06rem; font-weight:700; margin-top:8px; }
+.card-body h3{ font-family:var(--f-body); font-size:1.06rem; font-weight:700; margin-top:8px; }
 .card-body p{ font-size:.88rem; line-height:1.9; color:var(--muted-p); margin-top:8px; }
 
 /* ============ 看板番組（ラジオ） ============ */
 .radio-layout{ display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:start; }
-.radio-copy{ font-family:var(--f-mincho); font-size:1.06rem; line-height:2.1; }
+.radio-copy{ font-family:var(--f-body); font-size:1.06rem; font-weight:400; line-height:2.1; }
 .radio-copy p + p{ margin-top:1.1em; }
 .deflist-p{ border-top:2px solid var(--ink); }
 .deflist-p .row{ display:grid; grid-template-columns:132px 1fr; gap:20px; padding:14px 0; border-bottom:1px solid var(--hair-p); }
@@ -312,7 +338,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 
 /* 実績 */
 .work .date{ font-family:var(--f-num); font-size:.858rem; letter-spacing:.1em; color:var(--purple); }
-.work h3{ font-family:var(--f-mincho); font-size:1.18rem; font-weight:700; margin-top:9px; line-height:1.6; }
+.work h3{ font-family:var(--f-body); font-size:1.18rem; font-weight:700; margin-top:9px; line-height:1.6; }
 .work p{ font-size:.935rem; line-height:1.95; color:var(--muted-p); margin-top:12px; }
 .work-stats{ display:flex; gap:24px; margin-top:16px; border-top:1px solid var(--hair-p); padding-top:14px; flex-wrap:wrap; }
 .work-stats .v{ font-family:var(--f-num); font-size:1.5rem; font-weight:700; color:var(--gold-ink); }
@@ -365,7 +391,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .profile-name b{ color:var(--gold-ink); font-weight:800; }
 .profile-kana{ font-family:var(--f-en); font-style:italic; font-size:1.18rem; color:var(--purple); margin-top:7px; }
 .profile-role{ font-family:var(--f-num); font-size:.792rem; letter-spacing:.2em; color:var(--muted-p); margin-top:9px; }
-.profile-lead{ font-family:var(--f-mincho); font-size:1.12rem; line-height:2.1; margin-top:28px; max-width:34em; }
+.profile-lead{ font-family:var(--f-body); font-size:1.12rem; font-weight:400; line-height:2.1; margin-top:28px; max-width:34em; }
 .profile-lead p + p{ margin-top:1.2em; }
 .facts{ margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:0 44px; border-top:1px solid var(--hair-p); }
 .fact{ display:grid; grid-template-columns:96px 1fr; gap:18px; padding:12px 0; border-bottom:1px solid var(--hair-p); }
@@ -375,7 +401,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 /* FAQ */
 .faq{ display:grid; grid-template-columns:1fr 1fr; gap:0 48px; }
 .faq > div{ border-top:1px solid var(--hair-p); padding:18px 0; }
-.faq h3{ font-family:var(--f-mincho); font-size:1rem; font-weight:700; }
+.faq h3{ font-family:var(--f-body); font-size:1rem; font-weight:700; }
 .faq p{ font-size:.935rem; line-height:1.95; color:var(--muted-p); margin-top:9px; }
 
 /* 定義リスト（連絡先） */
@@ -526,6 +552,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
   .card-body h3{ font-size:1.034rem; }
   .card-body p{ font-size:.836rem; }
 
+  .week-list .row{ grid-template-columns:1.7em 2.4em 3.4em minmax(0,1fr) 9px; gap:8px; }
   .profile-fig{ min-height:0; height:330px; }
   .profile-id{ gap:16px; }
   .profile-avatar{ flex:0 0 88px; width:88px; height:88px; }

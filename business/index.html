@@ -36,6 +36,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+/* 描画前に保存済みの文字サイズを当てる（切替時のちらつき防止） */
+(function(){try{var v=localStorage.getItem('awr-fontsize');
+if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){}})();
+</script>
 <link rel="stylesheet" href="../assets/site.css">
 
 <script type="application/ld+json">
@@ -105,6 +110,17 @@
     </div>
   </div>
 </header>
+
+<!-- ============ 文字サイズ切替 ============ -->
+<div class="fontsize-bar">
+  <div class="wrap fontsize-inner">
+    <span class="fontsize-label" id="fsLabel">文字サイズ</span>
+    <div class="fontsize-ctrl" role="group" aria-labelledby="fsLabel">
+      <button type="button" class="fs-btn" data-fontsize="m" aria-pressed="true">標準</button>
+      <button type="button" class="fs-btn" data-fontsize="l" aria-pressed="false">大</button>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
@@ -192,6 +208,7 @@
       <div class="card-body">
         <p class="en">Live2D</p><h3>Live2Dモデル</h3>
         <p>表情と口元の芝居が細かく出ます。トーク中心の配信・生放送・対談に向きます。</p>
+        <p class="src">イラスト・モデリング：<a href="https://x.com/ikada_nami" target="_blank" rel="noopener" data-analytics-event="live2d_credit_click">X ／ @ikada_nami</a></p>
       </div>
     </div>
     <div class="card">
@@ -338,7 +355,7 @@
 <footer class="foot" style="padding-top:0;">
   <div class="wrap">
     <div class="foot-bottom" style="margin-top:0; border-top:0;">
-      <span>Illustration by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a></span>
+      <span>Illustration &amp; Key visual by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a> ／ Live2D by <a href="https://x.com/ikada_nami" target="_blank" rel="noopener">@ikada_nami</a></span>
       <span>© 2026 藍・W・楽歌 / Ai Winston Rucker</span>
     </div>
   </div>

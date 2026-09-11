@@ -41,6 +41,31 @@
     });
   }
 
+  /* ---------------- 文字サイズ切替 ---------------- */
+  (function () {
+    var btns = document.querySelectorAll('.fs-btn');
+    if (!btns.length) return;
+    var root = document.documentElement;
+
+    var apply = function (size, persist) {
+      root.setAttribute('data-fontsize', size);
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-fontsize') === size));
+      });
+      if (persist) { try { localStorage.setItem('awr-fontsize', size); } catch (e) {} }
+    };
+
+    var saved = null;
+    try { saved = localStorage.getItem('awr-fontsize'); } catch (e) {}
+    apply(saved === 'l' ? 'l' : 'm', false);   /* 旧「小」の保存値は標準に戻す */
+
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.getAttribute('data-fontsize'), true);
+      });
+    });
+  })();
+
   /* ---------------- GA4 ---------------- */
   document.addEventListener('click', function (event) {
     var link = event.target.closest('[data-analytics-event]');
