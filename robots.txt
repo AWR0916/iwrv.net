@@ -2,5 +2,11 @@ User-agent: *
 Allow: /
 Disallow: /_backup/
 Disallow: /index-preview.html
+Disallow: /SCHEDULE_UPDATE.md
+Disallow: /SCHEDULE_UPDATE_v2.md
+Disallow: /SITE_IMPROVEMENT_PLAN.md
+Disallow: /GOOGLE_FORM_TEMPLATE.md
+Disallow: /deploy.ps1
+Disallow: /deploy.bat
 
 Sitemap: https://iwrv.net/sitemap.xml

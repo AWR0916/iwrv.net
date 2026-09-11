@@ -17,7 +17,10 @@
 
     var setOpen = function (open) {
       nav.setAttribute('data-open', String(open));
-      if (burger) burger.setAttribute('aria-expanded', String(open));
+      if (burger) {
+        burger.setAttribute('aria-expanded', String(open));
+        burger.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      }
     };
 
     if (burger) {
@@ -65,6 +68,41 @@
     });
   }
 
+  var SAFE_HREF = /^(?:#|\/(?!\/)|https?:\/\/)/;
+  var DOW_JP = ['日', '月', '火', '水', '木', '金', '土'];
+
+  /* range の先頭日を週の起点として、まだ始まっていない最初の放送を出す */
+  function renderNextOnAir(data) {
+    var node = document.getElementById('nextOnAir');
+    if (!node) return;
+
+    var m = /(\d{4})\.(\d{2})\.(\d{2})/.exec(String(data.range || ''));
+    if (!m) return;
+    var start = new Date(+m[1], +m[2] - 1, +m[3]);
+    if (isNaN(start.getTime())) return;
+
+    var now = new Date();
+    var found = null;
+
+    (Array.isArray(data.days) ? data.days : []).forEach(function (d, i) {
+      if (found || d.off) return;
+      var hm = /^(\d{1,2}):(\d{2})$/.exec(String(d.time || ''));
+      if (!hm) return;                       /* 「未定」などは対象外 */
+      var when = new Date(start.getTime());
+      when.setDate(start.getDate() + i);
+      when.setHours(+hm[1], +hm[2], 0, 0);
+      if (when > now) found = { when: when, day: d };
+    });
+
+    if (!found) { node.textContent = '次回の放送は準備中です'; return; }
+
+    var p2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    node.textContent =
+      p2(found.when.getMonth() + 1) + '.' + p2(found.when.getDate()) +
+      ' ' + DOW_JP[found.when.getDay()] +
+      ' ' + found.day.time + ' ／ ' + (found.day.title || '');
+  }
+
   var KIND_CLASS = { radio: 'radio', sing: 'sing', act: 'act', game: 'game', vlog: 'vlog', sp: 'sp' };
   var KIND_SWATCH = {
     radio: 'sw-radio', sing: 'sw-sing', act: 'sw-act',
@@ -76,10 +114,12 @@
     var days = Array.isArray(data.days) ? data.days : [];
     if (!days.length) return;
 
+    renderNextOnAir(data);
+
     var period = document.getElementById('weekPeriod');
     if (period && data.range) period.textContent = data.range;
     var issue = document.getElementById('issueRange');
-    if (issue && data.range) issue.textContent = data.range + ' ／ WEEKLY PROGRAMME';
+    if (issue && data.range) issue.textContent = data.range + ' ／ WEEKLY SCHEDULE';
 
     /* PC：7列の表 */
     var week = document.getElementById('week');
@@ -105,38 +145,23 @@
       });
     }
 
-    /* スマホ：放送のある日だけのリスト */
+    /* スマホ：7日ぶんを縦に並べる。放送のない日も1行として出し、列を揃える */
     var list = document.getElementById('weekList');
     if (list) {
       list.textContent = '';
-      days.filter(function (d) { return !d.off; }).forEach(function (d) {
+      days.forEach(function (d) {
         var li = document.createElement('li');
+        if (d.off) li.className = 'off';
         var row = el('div', 'row');
-        row.appendChild(el('span', 'date', d.date + ' ' + (d.dow || '')));
-        row.appendChild(el('span', 'time', d.time || ''));
-        row.appendChild(el('span', 'ttl', d.title || ''));
-        var dot = el('span', 'dot ' + (KIND_SWATCH[d.kind] || 'sw-radio'));
+        row.appendChild(el('span', 'date', d.date));
+        row.appendChild(el('span', 'dow', d.dow || ''));
+        row.appendChild(el('span', 'time', d.off ? '' : (d.time || '')));
+        row.appendChild(el('span', 'ttl', d.off ? String(d.off) : (d.title || '')));
+        var dot = el('span', 'dot' + (d.off ? '' : ' ' + (KIND_SWATCH[d.kind] || 'sw-radio')));
         dot.setAttribute('aria-hidden', 'true');
         row.appendChild(dot);
         li.appendChild(row);
         list.appendChild(li);
-      });
-
-      /* 放送のない日は同じ文言ごとにまとめる（「おやすみ」と「未定」は別行） */
-      var labels = [];
-      var byLabel = {};
-      days.filter(function (d) { return d.off; }).forEach(function (d) {
-        var key = String(d.off);
-        if (!byLabel[key]) { byLabel[key] = []; labels.push(key); }
-        byLabel[key].push(d.date);
-      });
-      labels.forEach(function (key) {
-        var li2 = document.createElement('li');
-        var row2 = el('div', 'row');
-        row2.appendChild(el('span', 'date', byLabel[key].join('・')));
-        row2.appendChild(el('span', 'ttl', key));
-        li2.appendChild(row2);
-        list.appendChild(li2);
       });
     }
   }
@@ -155,7 +180,7 @@
     items.forEach(function (item) {
       var li = document.createElement('li');
       var a = document.createElement('a');
-      a.href = item.href || '#site-updates';
+      a.href = SAFE_HREF.test(item.href || '') ? item.href : '#site-updates';
 
       var time = document.createElement('time');
       time.dateTime = item.date;
