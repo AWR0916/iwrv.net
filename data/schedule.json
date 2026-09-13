@@ -1,14 +1,14 @@
 {
-  "period": "2026年9月2週",
-  "range": "2026.09.07 — 09.13",
+  "period": "2026年9月3週",
+  "range": "2026.09.14 — 09.20",
   "note": "",
   "days": [
-    { "date": "7",  "dow": "MON", "time": "21:00", "title": "AlternativeRadio #27", "genre": "ラジオ番組", "kind": "radio" },
-    { "date": "8",  "dow": "TUE", "time": "19:00", "title": "歌枠予定／FC握手会", "kind": "sing" },
-    { "date": "9",  "dow": "WED", "time": "22:00", "title": "ピロウズ布教コラボ", "genre": "チシャ猫アリスさんのチャンネル", "kind": "sp" },
-    { "date": "10", "dow": "THU", "off": "おやすみ" },
-    { "date": "11", "dow": "FRI", "time": "20:00", "title": "DQ6 モンスターコンプ企画 #9", "kind": "game" },
-    { "date": "12", "dow": "SAT", "off": "未定" },
-    { "date": "13", "dow": "SUN", "off": "未定" }
+    { "date": "14", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #28", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "15", "dow": "TUE", "time": "21:00", "title": "腹を割って話そう w/水瀬奏咲", "kind": "sp" },
+    { "date": "16", "dow": "WED", "time": "21:00", "title": "ピロウズVカバーフェス2026", "kind": "sing" },
+    { "date": "17", "dow": "THU", "off": "おやすみ" },
+    { "date": "18", "dow": "FRI", "time": "21:00", "title": "ナツハテロックフェス", "kind": "sing" },
+    { "date": "19", "dow": "SAT", "off": "未定" },
+    { "date": "20", "dow": "SUN", "off": "未定" }
   ]
 }
