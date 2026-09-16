@@ -98,7 +98,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <nav class="nav-menu" id="navMenu" aria-label="メインメニュー">
       <a href="#top" aria-current="page">今週号</a>
       <a href="#programme">番組表</a>
-      <a href="#archive">バックナンバー</a>
+      <a href="travel/">旅行記</a>
       <a href="#profile">藍・W・楽歌について</a>
       <a href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="raidori_nav_click">ファンクラブ</a>
       <a class="only-sp" href="business/" data-analytics-event="business_navsp_click">お仕事のご相談</a>
@@ -317,7 +317,11 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
   <div class="sec-head" style="margin-bottom:20px;">
     <span class="eyebrow">Archive</span>
     <h2 class="sec-title" id="archiveTitle">バックナンバー</h2>
-    <a class="more" style="margin-left:auto;" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeチャンネルを見る</a>
+    <span style="margin-left:auto; display:flex; gap:20px; flex-wrap:wrap; align-items:baseline;">
+      <a class="more" href="travel/" data-analytics-event="travel_index_click">旅行記を読む</a>
+      <a class="more" href="archive/" data-analytics-event="archive_index_click">ジャンル別で見る</a>
+      <a class="more" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeチャンネル</a>
+    </span>
   </div>
   <div class="grid-3">
     <article class="cell">
@@ -337,11 +341,11 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
       </a>
     </article>
     <article class="cell">
-      <a class="card-link" href="https://youtu.be/_KFRgImScD4" target="_blank" rel="noopener" data-analytics-event="archive_vlog_click">
-        <div class="thumb"><img src="https://i.ytimg.com/vi/_KFRgImScD4/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="お城巡りVlog 第2話 忍城のサムネイル"></div>
-        <p class="en">Travel / Vlog</p>
-        <h3>お城巡りVlog 第2話「忍城」</h3>
-        <p class="body">歴史と地理の視点を交えた城巡り。</p>
+      <a class="card-link" href="travel/castle/kawagoe/" data-analytics-event="archive_castle_article_click">
+        <div class="thumb"><img src="images/castle/kawagoe/01-honmaru-goten.webp" width="1600" height="900" loading="lazy" decoding="async" alt="川越城本丸御殿の正面外観"></div>
+        <p class="en">旅行記 — 城めぐり</p>
+        <h3>川越城の遺構を半日で歩く</h3>
+        <p class="body">全国に2つだけの現存御殿と、深さ7mの空堀。所要時間つき。</p>
       </a>
     </article>
   </div>
