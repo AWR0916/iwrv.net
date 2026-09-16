@@ -222,6 +222,22 @@
     });
   }
 
+  /* ---------------- 記事ページ：動画のクリック再生 ---------------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.vid-facade'), function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-video');
+      if (!id) return;
+      var box = btn.parentNode;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = btn.getAttribute('data-title') || '動画';
+      f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      box.replaceChild(f, btn);
+    });
+  });
+
   /* ---------------- 起動 ---------------- */
   var base = document.body.getAttribute('data-base') || '';
 
