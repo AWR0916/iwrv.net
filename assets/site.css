@@ -661,6 +661,14 @@ table.route thead th{
 }
 table.route td.num{ font-family:var(--f-num); white-space:nowrap; color:var(--muted-p); }
 
+/* ---- プロフィール用の項目表（狭い画面では折り返す） ---- */
+table.route.kv{ min-width:0; }
+table.route.kv td:first-child{ width:9em; color:var(--muted-p); }
+@media (max-width:520px){
+  table.route.kv td:first-child{ width:6.2em; }
+  table.route.kv th, table.route.kv td{ padding:10px 8px; }
+}
+
 /* ---- 注意ボックス（休館日など） ---- */
 .warnbox{
   margin-top:26px; padding:20px 24px;
