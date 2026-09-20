@@ -98,8 +98,8 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <nav class="nav-menu" id="navMenu" aria-label="メインメニュー">
       <a href="#top" aria-current="page">今週号</a>
       <a href="#programme">番組表</a>
-      <a href="travel/">旅行記</a>
-      <a href="profile/">藍・W・楽歌について</a>
+      <a href="#archive">バックナンバー</a>
+      <a href="#profile">藍・W・楽歌について</a>
       <a href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="raidori_nav_click">ファンクラブ</a>
       <a class="only-sp" href="business/" data-analytics-event="business_navsp_click">お仕事のご相談</a>
     </nav>
@@ -129,7 +129,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <h1>藍・<b>W</b>・楽歌</h1>
     <div class="masthead-sub">
       <p class="concept">大人になっても、遊び足りない。</p>
-      <p class="issue" id="issueRange">2026.09.14 — 09.20 ／ WEEKLY SCHEDULE</p>
+      <p class="issue" id="issueRange">2026.09.21 — 09.27 ／ WEEKLY SCHEDULE</p>
     </div>
     <div class="next-onair">
       <p class="lbl"><span class="lamp" aria-hidden="true"></span><span class="cap">NEXT ON AIR</span></p>
@@ -170,7 +170,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
   <div class="sec-head" style="margin-bottom:18px;">
     <span class="eyebrow">Weekly Schedule</span>
     <h2 class="sec-title" id="programmeTitle">今週の番組表</h2>
-    <span class="sec-note" id="weekPeriod">2026.09.14 — 09.20</span>
+    <span class="sec-note" id="weekPeriod">2026.09.21 — 09.27</span>
     <span class="legend">
       <span><i class="sw-radio" aria-hidden="true"></i>ラジオ</span>
       <span><i class="sw-sing" aria-hidden="true"></i>歌枠</span>
@@ -183,31 +183,31 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
 
   <!-- PC：7列。JSON取得失敗時はこの初期値がそのまま残る -->
   <div class="week" id="week">
-    <div class="day"><div class="day-head"><span class="d">14</span><span class="w">MON</span></div>
-      <div class="prog radio"><div class="time">21:00</div><div class="ttl">AlternativeRadio #28</div><div class="gen">ラジオ番組</div></div></div>
-    <div class="day"><div class="day-head"><span class="d">15</span><span class="w">TUE</span></div>
-      <div class="prog sp"><div class="time">21:00</div><div class="ttl">腹を割って話そう w/水瀬奏咲</div></div></div>
-    <div class="day"><div class="day-head"><span class="d">16</span><span class="w">WED</span></div>
-      <div class="prog sing"><div class="time">21:00</div><div class="ttl">ピロウズVカバーフェス2026</div></div></div>
-    <div class="day off"><div class="day-head"><span class="d">17</span><span class="w">THU</span></div>
+    <div class="day"><div class="day-head"><span class="d">21</span><span class="w">MON</span></div>
+      <div class="prog radio"><div class="time">21:00</div><div class="ttl">AlternativeRadio #29</div><div class="gen">ラジオ番組</div></div></div>
+    <div class="day"><div class="day-head"><span class="d">22</span><span class="w">TUE</span></div>
+      <div class="prog sing"><div class="time">20:00</div><div class="ttl">ピロウズVカバーフェス2026 全曲振り返り歌枠</div></div></div>
+    <div class="day"><div class="day-head"><span class="d">23</span><span class="w">WED</span></div>
+      <div class="prog game"><div class="time">20:00</div><div class="ttl">DQ6 モンスターコンプ企画 #9</div></div></div>
+    <div class="day off"><div class="day-head"><span class="d">24</span><span class="w">THU</span></div>
       <p class="off-txt">おやすみ</p></div>
-    <div class="day"><div class="day-head"><span class="d">18</span><span class="w">FRI</span></div>
-      <div class="prog sing"><div class="time">21:00</div><div class="ttl">ナツハテロックフェス</div></div></div>
-    <div class="day off"><div class="day-head"><span class="d">19</span><span class="w">SAT</span></div>
+    <div class="day"><div class="day-head"><span class="d">25</span><span class="w">FRI</span></div>
+      <div class="prog sp"><div class="time">22:00</div><div class="ttl">ライドリ会員限定配信</div></div></div>
+    <div class="day off"><div class="day-head"><span class="d">26</span><span class="w">SAT</span></div>
       <p class="off-txt">未定</p></div>
-    <div class="day off"><div class="day-head"><span class="d">20</span><span class="w">SUN</span></div>
-      <p class="off-txt">未定</p></div>
+    <div class="day off"><div class="day-head"><span class="d">27</span><span class="w">SUN</span></div>
+      <p class="off-txt">おやすみ</p></div>
   </div>
 
   <!-- スマホ：リスト -->
   <ul class="week-list" id="weekList">
-    <li><div class="row"><span class="date">14</span><span class="dow">MON</span><span class="time">21:00</span><span class="ttl">AlternativeRadio #28</span><span class="dot sw-radio" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">15</span><span class="dow">TUE</span><span class="time">21:00</span><span class="ttl">腹を割って話そう w/水瀬奏咲</span><span class="dot sw-sp" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">16</span><span class="dow">WED</span><span class="time">21:00</span><span class="ttl">ピロウズVカバーフェス2026</span><span class="dot sw-sing" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">17</span><span class="dow">THU</span><span class="time"></span><span class="ttl">おやすみ</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">18</span><span class="dow">FRI</span><span class="time">21:00</span><span class="ttl">ナツハテロックフェス</span><span class="dot sw-sing" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">19</span><span class="dow">SAT</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">20</span><span class="dow">SUN</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">21</span><span class="dow">MON</span><span class="time">21:00</span><span class="ttl">AlternativeRadio #29</span><span class="dot sw-radio" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">22</span><span class="dow">TUE</span><span class="time">20:00</span><span class="ttl">ピロウズVカバーフェス2026 全曲振り返り歌枠</span><span class="dot sw-sing" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">23</span><span class="dow">WED</span><span class="time">20:00</span><span class="ttl">DQ6 モンスターコンプ企画 #9</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
+    <li class="off"><div class="row"><span class="date">24</span><span class="dow">THU</span><span class="time"></span><span class="ttl">おやすみ</span><span class="dot" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">25</span><span class="dow">FRI</span><span class="time">22:00</span><span class="ttl">ライドリ会員限定配信</span><span class="dot sw-sp" aria-hidden="true"></span></div></li>
+    <li class="off"><div class="row"><span class="date">26</span><span class="dow">SAT</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
+    <li class="off"><div class="row"><span class="date">27</span><span class="dow">SUN</span><span class="time"></span><span class="ttl">おやすみ</span><span class="dot" aria-hidden="true"></span></div></li>
   </ul>
 
   <div class="programme-foot">
@@ -294,7 +294,6 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
       <div class="fact"><dt>HOBBY</dt><dd>旅行、グルメ、ドライブ、歴史</dd></div>
       <div class="fact"><dt>CAREER</dt><dd>舞台役者・イベントMC・ラジオDJ</dd></div>
     </dl>
-    <p style="margin-top:22px;"><a class="more" href="profile/" data-analytics-event="profile_page_click">プロフィールを詳しく見る</a></p>
   </div>
 </section>
 
@@ -318,10 +317,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
   <div class="sec-head" style="margin-bottom:20px;">
     <span class="eyebrow">Archive</span>
     <h2 class="sec-title" id="archiveTitle">バックナンバー</h2>
-    <span style="margin-left:auto; display:flex; gap:20px; flex-wrap:wrap; align-items:baseline;">
-      <a class="more" href="travel/" data-analytics-event="travel_index_click">旅行記を読む</a>
-      <a class="more" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeチャンネル</a>
-    </span>
+    <a class="more" style="margin-left:auto;" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeチャンネルを見る</a>
   </div>
   <div class="grid-3">
     <article class="cell">
@@ -333,19 +329,19 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
       </a>
     </article>
     <article class="cell">
-      <a class="card-link" href="travel/castle/oshi/" data-analytics-event="archive_castle_oshi_click">
-        <div class="thumb"><img src="images/castle/oshi/01b-oshi-yagura-mizubori.webp" width="1600" height="900" loading="lazy" decoding="async" alt="水堀の向こうに立つ忍城御三階櫓"></div>
-        <p class="en">旅行記 — 城めぐり</p>
-        <h3>忍城と石田堤を半日で歩く</h3>
-        <p class="body">水攻めに耐えた「浮き城」と、攻め手が残した堤。</p>
+      <a class="card-link" href="https://youtu.be/Vt88WMTThaM" target="_blank" rel="noopener" data-analytics-event="archive_special_click">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/Vt88WMTThaM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="JSP3部作クリア耐久のサムネイル"></div>
+        <p class="en">Special</p>
+        <h3>JSP3部作クリア耐久</h3>
+        <p class="body">長時間の耐久配信。</p>
       </a>
     </article>
     <article class="cell">
-      <a class="card-link" href="travel/castle/kawagoe/" data-analytics-event="archive_castle_article_click">
-        <div class="thumb"><img src="images/castle/kawagoe/01-honmaru-goten.webp" width="1600" height="900" loading="lazy" decoding="async" alt="川越城本丸御殿の正面外観"></div>
-        <p class="en">旅行記 — 城めぐり</p>
-        <h3>川越城の遺構を半日で歩く</h3>
-        <p class="body">全国に2つだけの現存御殿と、深さ7mの空堀。所要時間つき。</p>
+      <a class="card-link" href="https://youtu.be/_KFRgImScD4" target="_blank" rel="noopener" data-analytics-event="archive_vlog_click">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/_KFRgImScD4/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="お城巡りVlog 第2話 忍城のサムネイル"></div>
+        <p class="en">Travel / Vlog</p>
+        <h3>お城巡りVlog 第2話「忍城」</h3>
+        <p class="body">歴史と地理の視点を交えた城巡り。</p>
       </a>
     </article>
   </div>
@@ -372,6 +368,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <h2 class="sec-title" id="updatesTitle">サイト更新情報</h2>
   </div>
   <ul class="updates-list" id="updatesList">
+    <li><a href="#programme"><time datetime="2026-09-20">2026.09.20</time><span>9月4週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="#programme"><time datetime="2026-09-13">2026.09.13</time><span>9月3週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="#programme"><time datetime="2026-09-06">2026.09.06</time><span>9月2週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="#programme"><time datetime="2026-08-31">2026.08.31</time><span>9月1週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>

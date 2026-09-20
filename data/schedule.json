@@ -1,14 +1,14 @@
 {
-  "period": "2026年9月3週",
-  "range": "2026.09.14 — 09.20",
+  "period": "2026年9月4週",
+  "range": "2026.09.21 — 09.27",
   "note": "",
   "days": [
-    { "date": "14", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #28", "genre": "ラジオ番組", "kind": "radio" },
-    { "date": "15", "dow": "TUE", "time": "21:00", "title": "腹を割って話そう w/水瀬奏咲", "kind": "sp" },
-    { "date": "16", "dow": "WED", "time": "21:00", "title": "ピロウズVカバーフェス2026", "kind": "sing" },
-    { "date": "17", "dow": "THU", "off": "おやすみ" },
-    { "date": "18", "dow": "FRI", "time": "21:00", "title": "ナツハテロックフェス", "kind": "sing" },
-    { "date": "19", "dow": "SAT", "off": "未定" },
-    { "date": "20", "dow": "SUN", "off": "未定" }
+    { "date": "21", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #29", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "22", "dow": "TUE", "time": "20:00", "title": "ピロウズVカバーフェス2026 全曲振り返り歌枠", "kind": "sing" },
+    { "date": "23", "dow": "WED", "time": "20:00", "title": "DQ6 モンスターコンプ企画 #9", "kind": "game" },
+    { "date": "24", "dow": "THU", "off": "おやすみ" },
+    { "date": "25", "dow": "FRI", "time": "22:00", "title": "ライドリ会員限定配信", "kind": "sp" },
+    { "date": "26", "dow": "SAT", "off": "未定" },
+    { "date": "27", "dow": "SUN", "off": "おやすみ" }
   ]
 }

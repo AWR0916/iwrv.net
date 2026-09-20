@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "date": "2026-09-20",
+      "displayDate": "2026.09.20",
+      "text": "9月4週の配信スケジュールを公開",
+      "href": "#programme"
+    },
+    {
       "date": "2026-09-13",
       "displayDate": "2026.09.13",
       "text": "9月3週の配信スケジュールを公開",
@@ -23,12 +29,6 @@
       "displayDate": "2026.08.26",
       "text": "放送アーカイブ「JSP3部作クリア耐久」「お城巡りVlog 第2話」 UP",
       "href": "#archive"
-    },
-    {
-      "date": "2026-08-24",
-      "displayDate": "2026.08.24",
-      "text": "8月4週の配信スケジュールを公開",
-      "href": "#programme"
     }
   ]
 }
