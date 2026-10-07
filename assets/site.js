@@ -134,6 +134,24 @@
     game: 'sw-game', vlog: 'sw-vlog', sp: 'sw-sp'
   };
 
+  /* 番組名。url（https のみ）があれば配信ページへのリンクにする */
+  var SAFE_STREAM_URL = /^https:\/\/[^\s"'<>]+$/;
+  function titleNode(tag, d) {
+    var node = el(tag, 'ttl');
+    var title = d.title || '';
+    if (d.url && SAFE_STREAM_URL.test(String(d.url))) {
+      var a = el('a', null, title);
+      a.href = d.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('data-analytics-event', 'schedule_stream_click');
+      node.appendChild(a);
+    } else {
+      node.textContent = title;
+    }
+    return node;
+  }
+
   /* ---------------- 番組表 ---------------- */
   function renderWeek(data) {
     var days = Array.isArray(data.days) ? data.days : [];
@@ -162,7 +180,7 @@
         } else {
           var prog = el('div', 'prog ' + (KIND_CLASS[d.kind] || 'radio'));
           if (d.time) prog.appendChild(el('div', 'time', d.time));
-          prog.appendChild(el('div', 'ttl', d.title || ''));
+          prog.appendChild(titleNode('div', d));
           if (d.genre) prog.appendChild(el('div', 'gen', d.genre));
           cell.appendChild(prog);
         }
@@ -181,7 +199,7 @@
         row.appendChild(el('span', 'date', d.date));
         row.appendChild(el('span', 'dow', d.dow || ''));
         row.appendChild(el('span', 'time', d.off ? '' : (d.time || '')));
-        row.appendChild(el('span', 'ttl', d.off ? String(d.off) : (d.title || '')));
+        row.appendChild(d.off ? el('span', 'ttl', String(d.off)) : titleNode('span', d));
         var dot = el('span', 'dot' + (d.off ? '' : ' ' + (KIND_SWATCH[d.kind] || 'sw-radio')));
         dot.setAttribute('aria-hidden', 'true');
         row.appendChild(dot);
