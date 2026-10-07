@@ -50,7 +50,7 @@
 ### 3. 確認する
 
 ```powershell
-cd D:\Document\claudecode\Rucker_website
+cd <サイトのフォルダ>
 python -m http.server 8000
 ```
 
