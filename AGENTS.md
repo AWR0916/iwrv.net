@@ -22,7 +22,17 @@
 - 他リポジトリ向けの指示
 - ビルドツールやフレームワークの導入（静的構成を維持します）
 
-背景、デザイン方針、過去の実装判断は [CODEX_HANDOFF.md](CODEX_HANDOFF.md) に記載しています。本ファイルと矛盾する場合は本ファイルを優先し、差分を CODEX_HANDOFF.md へ反映します。
+背景、デザイン方針、過去の実装判断は `CODEX_HANDOFF.md` に記載しています。ローカルパスなどの内部情報を含むため、このファイルは公開リポジトリでは管理せず、利用者の手元にだけ置きます（`.gitignore` で除外）。手元に無い環境では本ファイルを正とします。本ファイルと矛盾する場合は本ファイルを優先し、手元にある場合は差分を CODEX_HANDOFF.md へ反映します。
+
+`GOOGLE_FORM_TEMPLATE.md`（問い合わせフォーム項目の控え）も同じ理由で手元にだけ置きます。
+
+### サイト構成
+
+- `index.html`: トップページ（今週号）
+- `business/` `profile/` `privacy/` `travel/` `travel/castle/<城>/`: 各ページ（`index.html`）
+- `assets/site.css` `assets/site.js`: 全ページ共通のCSSとJavaScript
+- `data/schedule.json`: 今週の番組表 ／ `data/updates.json`: サイト更新情報
+- `sitemap.xml` `robots.txt` `CNAME`: 公開設定
 
 ## Project-specific rules
 
@@ -39,13 +49,13 @@
 
 ### 必須
 
-- 変更前に現在の `index.html` を確認します。HTML、CSS、JavaScriptはこのファイルに内包されています。
+- 変更前に現在の `index.html` を確認します。CSSは `assets/site.css`、JavaScriptは `assets/site.js` に分かれており、全ページで共有しています。
 - スマホ表示を最優先します。幅390pxで表示崩れ、重なり、横方向のはみ出しが無いことを確認します。
 - 画像パスは大文字・小文字を区別して記述します。GitHub Pagesでは区別されます（例: `images/ai-winston-rucker-main.PNG`）。
 - 依頼された範囲以外のリファクタリングを行いません。
 - 利用者が加えた変更を戻しません。`force push`、`reset --hard`、既存変更の巻き戻しを行いません。
-- 週次スケジュール画像は同じファイル名で上書きしません。週ごとに新しいファイル名を付けます。ブラウザキャッシュで古い画像が残るのを防ぐためです。
-- 表示データは `data/onair.json` と `data/updates.json` を編集します。HTMLへ直接書き込みません。
+- 週次スケジュール画像を追加する場合は同じファイル名で上書きせず、週ごとに新しいファイル名を付けます。ブラウザキャッシュで古い画像が残るのを防ぐためです（現在の番組表は画像を使いません）。
+- 番組表は `data/schedule.json`、更新情報は `data/updates.json` を編集します。`index.html` 内の番組表と更新情報は読み込み失敗時の予備表示なので、JSONと同じ内容に揃えます。`data/onair.json` と `images/onair/` は旧デザインの名残で、現在は使っていません。
 - `data/updates.json` には閲覧者に関係する更新だけを記載し、最大5件に保ちます。Analytics設定や内部的な文言調整は記載しません。
 - リポジトリ直下の `ai-winston-rucker-main.PNG` は過去から残る重複ファイルです。必要性を確認せずに削除しません。
 - X APIと投稿埋め込み、VRoid Hubのiframe、Instagramを使用しません。いずれも不採用または撤去済みです。
@@ -54,14 +64,14 @@
 
 - 既存のデザイン方針と文章のトーンを維持します。黒、アイボリー、金、控えめな紫。明朝体と紙面風の構成。
 - 変更内容と変更したファイルを箇条書きで報告します。
-- 週次スケジュールの更新は [SCHEDULE_UPDATE.md](SCHEDULE_UPDATE.md) および [SCHEDULE_UPDATE_v2.md](SCHEDULE_UPDATE_v2.md) の手順に従います。
+- 週次スケジュールの更新は [SCHEDULE_UPDATE_v2.md](SCHEDULE_UPDATE_v2.md) の手順に従います。[SCHEDULE_UPDATE.md](SCHEDULE_UPDATE.md) は旧手順です。
 
 ## Required checks
 
 `main` へ反映する前に、次をすべて確認します。
 
 - HTMLの主要タグの開始数と終了数が一致すること
-- `data/onair.json` と `data/updates.json` がJSONとして妥当であること
+- `data/schedule.json` と `data/updates.json` がJSONとして妥当であること
 - 追加・変更した画像パスが実在し、大文字・小文字まで一致すること
 - リンク切れと、未設定の `href="#"` が残っていないこと
 - 幅390pxでの表示に崩れ、重なり、横方向のはみ出しが無いこと

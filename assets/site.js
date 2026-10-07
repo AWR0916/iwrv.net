@@ -96,35 +96,35 @@
   var SAFE_HREF = /^(?:#|\/(?!\/)|https?:\/\/)/;
   var DOW_JP = ['日', '月', '火', '水', '木', '金', '土'];
 
-  /* range の先頭日を週の起点として、まだ始まっていない最初の放送を出す */
+  /* range の先頭日を週の起点として、まだ始まっていない最初の放送を出す。
+     放送時刻は日本時間なので、閲覧者の端末のタイムゾーンに関係なくJSTで判定する */
   function renderNextOnAir(data) {
     var node = document.getElementById('nextOnAir');
     if (!node) return;
 
     var m = /(\d{4})\.(\d{2})\.(\d{2})/.exec(String(data.range || ''));
     if (!m) return;
-    var start = new Date(+m[1], +m[2] - 1, +m[3]);
-    if (isNaN(start.getTime())) return;
 
-    var now = new Date();
+    var JST_OFFSET = 9 * 60 * 60 * 1000;
+    var now = Date.now();
     var found = null;
 
     (Array.isArray(data.days) ? data.days : []).forEach(function (d, i) {
       if (found || d.off) return;
       var hm = /^(\d{1,2}):(\d{2})$/.exec(String(d.time || ''));
       if (!hm) return;                       /* 「未定」などは対象外 */
-      var when = new Date(start.getTime());
-      when.setDate(start.getDate() + i);
-      when.setHours(+hm[1], +hm[2], 0, 0);
-      if (when > now) found = { when: when, day: d };
+      /* JSTの日時をUTCの値として組み立て、9時間引いて実際の時刻にする */
+      var jst = Date.UTC(+m[1], +m[2] - 1, +m[3] + i, +hm[1], +hm[2]);
+      if (isNaN(jst)) return;
+      if (jst - JST_OFFSET > now) found = { jst: new Date(jst), day: d };
     });
 
     if (!found) { node.textContent = '次回の放送は準備中です'; return; }
 
     var p2 = function (n) { return (n < 10 ? '0' : '') + n; };
     node.textContent =
-      p2(found.when.getMonth() + 1) + '.' + p2(found.when.getDate()) +
-      ' ' + DOW_JP[found.when.getDay()] +
+      p2(found.jst.getUTCMonth() + 1) + '.' + p2(found.jst.getUTCDate()) +
+      ' ' + DOW_JP[found.jst.getUTCDay()] +
       ' ' + found.day.time + ' ／ ' + (found.day.title || '');
   }
 
