@@ -41,6 +41,7 @@
 | `genre` | 小さく出るジャンル名 | `雑学・音楽・近況` |
 | `kind` | 左の色棒の色 | `radio`（紫・ラジオ）／`sing`（ローズ・歌枠）／`act`（青・声劇）／`game`（青緑・ゲーム）／`vlog`（緑・旅/Vlog）／`sp`（金・特番） |
 | `off` | 放送がない日 | `"off": "おやすみ"` または `"off": "未定"` |
+| `url` | 配信ページ（任意） | `https://www.youtube.com/watch?v=...`。書くと番組名が配信の待機所へのリンクになります。`https://` で始まるURLだけ有効です |
 
 **放送がない日は `time` `title` `genre` `kind` を書かず、`off` だけにします。**
 
@@ -49,7 +50,7 @@
 ### 3. 確認する
 
 ```powershell
-cd D:\Document\claudecode\Rucker_website
+cd <サイトのフォルダ>
 python -m http.server 8000
 ```
 
@@ -112,4 +113,4 @@ git push origin main
 | 検索エンジン | 画像なので読めない | テキストなので読める |
 | 読み上げ | 内容が読めない | 読める |
 
-`data/onair.json` と `images/onair/` は旧デザイン用です。新トップに切り替えたあとは使いませんが、**バックナンバーとして残しておいて構いません**（消す必要はありません）。
+旧デザイン用の `data/onair.json` と `images/onair/` は、2026-10-07に削除しました（Gitの履歴には残っています）。

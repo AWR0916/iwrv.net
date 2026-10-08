@@ -51,13 +51,12 @@
 
 - 変更前に現在の `index.html` を確認します。CSSは `assets/site.css`、JavaScriptは `assets/site.js` に分かれており、全ページで共有しています。
 - スマホ表示を最優先します。幅390pxで表示崩れ、重なり、横方向のはみ出しが無いことを確認します。
-- 画像パスは大文字・小文字を区別して記述します。GitHub Pagesでは区別されます（例: `images/ai-winston-rucker-main.PNG`）。
+- 画像パスは大文字・小文字を区別して記述します。GitHub Pagesでは区別されます（例: `.PNG` と `.png` は別のファイルとして扱われます）。
 - 依頼された範囲以外のリファクタリングを行いません。
 - 利用者が加えた変更を戻しません。`force push`、`reset --hard`、既存変更の巻き戻しを行いません。
 - 週次スケジュール画像を追加する場合は同じファイル名で上書きせず、週ごとに新しいファイル名を付けます。ブラウザキャッシュで古い画像が残るのを防ぐためです（現在の番組表は画像を使いません）。
-- 番組表は `data/schedule.json`、更新情報は `data/updates.json` を編集します。`index.html` 内の番組表と更新情報は読み込み失敗時の予備表示なので、JSONと同じ内容に揃えます。`data/onair.json` と `images/onair/` は旧デザインの名残で、現在は使っていません。
+- 番組表は `data/schedule.json`、更新情報は `data/updates.json` を編集します。`index.html` 内の番組表と更新情報は読み込み失敗時の予備表示なので、JSONと同じ内容に揃えます。
 - `data/updates.json` には閲覧者に関係する更新だけを記載し、最大5件に保ちます。Analytics設定や内部的な文言調整は記載しません。
-- リポジトリ直下の `ai-winston-rucker-main.PNG` は過去から残る重複ファイルです。必要性を確認せずに削除しません。
 - X APIと投稿埋め込み、VRoid Hubのiframe、Instagramを使用しません。いずれも不採用または撤去済みです。
 
 ### 推奨
