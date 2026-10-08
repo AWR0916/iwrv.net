@@ -33,6 +33,7 @@
 - `assets/site.css` `assets/site.js`: 全ページ共通のCSSとJavaScript
 - `data/schedule.json`: 今週の番組表 ／ `data/updates.json`: サイト更新情報
 - `sitemap.xml` `robots.txt` `CNAME`: 公開設定
+- `AGENTS.md` `CLAUDE.md`: AI作業の規則（`CLAUDE.md` は本ファイルを読み込み、作業開始時の手順を補足します）
 
 ## Project-specific rules
 
