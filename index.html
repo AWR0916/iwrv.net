@@ -127,30 +127,21 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
 <section class="wrap masthead" id="top">
   <div class="masthead-inner">
     <h1>藍・<b>W</b>・楽歌</h1>
-    <div class="masthead-sub">
-      <p class="concept">大人になっても、遊び足りない。</p>
-      <p class="issue" id="issueRange">2026.10.05 — 10.11 ／ WEEKLY SCHEDULE</p>
-    </div>
+    <p class="issue" id="issueRange">2026.10.05 — 10.11 ／ WEEKLY SCHEDULE</p>
+  </div>
+</section>
+
+<!-- ============ 表紙（一言・絵・主ボタン・次の放送だけ） ============ -->
+<section class="wrap cover cover-top" aria-labelledby="coverTitle" data-hide-sticky>
+  <div class="cover-copy">
+    <h2 id="coverTitle">大人になっても、<br>遊び足りない。</h2>
     <div class="next-onair">
       <p class="lbl"><span class="lamp" aria-hidden="true"></span><span class="cap">NEXT ON AIR</span></p>
       <p class="val" id="nextOnAir">10.11 日 14:00 ／ コラボTRPG「SOOPER SIGN」</p>
     </div>
-  </div>
-</section>
-
-<!-- ============ 表紙 ============ -->
-<section class="wrap cover" aria-label="サイト紹介">
-  <div class="cover-copy">
-    <p class="eyebrow">Welcome</p>
-    <h2>あの頃のワクワクへ、<br>ようこそ。</h2>
-    <p class="cover-lead">仕事終わりに、少しだけ寄り道を。ラジオのように話し、ロックを歌い、レトロゲームを遊び、旅先で歴史と地理を巡る。大人のための趣味時間をお届けしています。</p>
     <div class="cover-actions">
       <a class="btn btn-solid" href="https://www.youtube.com/@i_w_r_v?sub_confirmation=1" target="_blank" rel="noopener" data-analytics-event="youtube_subscribe_cover_click">YouTubeでチャンネル登録</a>
-      <a class="btn btn-line" href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="raidori_cover_click">ファンクラブのご案内</a>
     </div>
-    <ul class="tags" aria-label="活動ジャンル">
-      <li>AlternativeRadio</li><li>Music</li><li>Retro Game</li><li>Voice Drama</li><li>Vlog</li>
-    </ul>
   </div>
 
   <figure class="cover-photo">
@@ -163,6 +154,39 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <p class="cover-credit">ILLUSTRATION BY <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a></p>
     <figcaption class="cover-cap">Cover — On Air, Monday 21:00</figcaption>
   </figure>
+</section>
+
+<!-- ============ 3つの入口 ============ -->
+<section class="wrap doors" id="doors" aria-labelledby="doorsTitle">
+  <h2 class="sr-only" id="doorsTitle">藍・W・楽歌の楽しみ方</h2>
+  <ul class="doors-list">
+    <li class="door">
+      <div class="door-fig"><img src="images/radio-cut.webp" width="1050" height="1100" loading="lazy" decoding="async" alt=""></div>
+      <div class="door-body">
+        <h3 class="door-verb">見る</h3>
+        <p class="door-title"><a class="door-link" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeの配信と動画</a></p>
+        <p class="door-text">月曜21時のラジオを軸に、歌、レトロゲーム、声劇を配信しています。</p>
+        <a class="door-sub" href="#programme" data-analytics-event="entrance_schedule_click">今週の番組表</a>
+      </div>
+    </li>
+    <li class="door">
+      <div class="door-fig"><img src="images/castle/kawagoe/01-honmaru-goten.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></div>
+      <div class="door-body">
+        <h3 class="door-verb">読む</h3>
+        <p class="door-title"><a class="door-link" href="travel/" data-analytics-event="travel_index_click">旅行記「楽歌の城攻め見聞録」</a></p>
+        <p class="door-text">城と城下町を半日で歩いた記録。道順、所要時間、食べたものまで載せています。</p>
+        <a class="door-sub" href="travel/castle/utsunomiya/" data-analytics-event="entrance_travel_latest_click">最新話：宇都宮城</a>
+      </div>
+    </li>
+    <li class="door">
+      <div class="door-fig"><img src="images/tachie.webp" width="800" height="1200" loading="lazy" decoding="async" alt=""></div>
+      <div class="door-body">
+        <h3 class="door-verb">応援する</h3>
+        <p class="door-title"><a class="door-link" href="https://raidori.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="raidori_cover_click">ファンクラブ（Raidori）</a></p>
+        <p class="door-text">活動をもう一歩近くで支えていただける場所です。入会の案内はRaidoriのページにあります。</p>
+      </div>
+    </li>
+  </ul>
 </section>
 
 <!-- ============ 番組表 ============ -->
@@ -181,7 +205,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     </span>
   </div>
 
-  <!-- PC：7列。JSON取得失敗時はこの初期値がそのまま残る -->
+  <!-- PC：7列（放送のない日は細い列）。JSON取得失敗時はこの初期値がそのまま残る -->
   <div class="week" id="week">
     <div class="day off"><div class="day-head"><span class="d">5</span><span class="w">MON</span></div>
       <p class="off-txt">おやすみ</p></div>
@@ -199,15 +223,10 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
       <div class="prog game"><div class="time">14:00</div><div class="ttl">コラボTRPG「SOOPER SIGN」</div></div></div>
   </div>
 
-  <!-- スマホ：リスト -->
+  <!-- スマホ：放送のある日だけ並べ、おやすみ・未定は最後の1行にまとめる -->
   <ul class="week-list" id="weekList">
-    <li class="off"><div class="row"><span class="date">5</span><span class="dow">MON</span><span class="time"></span><span class="ttl">おやすみ</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">6</span><span class="dow">TUE</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">7</span><span class="dow">WED</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">8</span><span class="dow">THU</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">9</span><span class="dow">FRI</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
-    <li class="off"><div class="row"><span class="date">10</span><span class="dow">SAT</span><span class="time"></span><span class="ttl">未定</span><span class="dot" aria-hidden="true"></span></div></li>
     <li><div class="row"><span class="date">11</span><span class="dow">SUN</span><span class="time">14:00</span><span class="ttl">コラボTRPG「SOOPER SIGN」</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
+    <li class="off rest"><div class="row"><span class="lbl">ほかの日</span><span class="ttl">5日 おやすみ ／ 6〜10日 未定</span></div></li>
   </ul>
 
   <div class="programme-foot">
@@ -216,138 +235,88 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
   </div>
 </section>
 
-<!-- ============ 看板番組 ============ -->
+<!-- ============ 番組と連載（看板番組・連載・おすすめを統合） ============ -->
 <section class="section tint wrap" id="radio" aria-labelledby="radioTitle">
   <div class="sec-head" style="margin-bottom:22px;">
-    <span class="eyebrow">Main Program</span>
-    <h2 class="sec-title" id="radioTitle">AlternativeRadio</h2>
-    <span class="sec-note">毎週月曜 21:00 ／ YouTubeで生放送</span>
+    <span class="eyebrow">Programs</span>
+    <h2 class="sec-title" id="radioTitle">番組と連載</h2>
   </div>
-  <div class="radio-layout">
-    <div>
-      <div class="radio-copy">
-        <p>人を選ぶけれど、好きな人には深く刺さる。雑学、音楽、近況、趣味の話を中心に、藍・W・楽歌がゆるく語るオルタナティブなラジオ番組です。</p>
-        <p>お便り、コーナー投稿、番組内CMを募集しています。番組ページから送れます。</p>
-      </div>
+  <div class="shows">
+    <div class="show-main">
+      <p class="en">AlternativeRadio</p>
+      <h3>月曜夜の30分ラジオ</h3>
+      <p class="show-when">毎週月曜 21:00 ／ YouTubeで生放送</p>
+      <p class="body">雑学、音楽、近況、趣味の話を、藍・W・楽歌がゆるく語るラジオ番組です。お便り、コーナー投稿、番組内CMを番組ページで募集しています。</p>
       <div class="cover-actions">
         <a class="btn btn-ink" href="https://a1wruck3r2025.wixsite.com/irwv" target="_blank" rel="noopener" data-analytics-event="radio_program_click">番組ページを見る</a>
         <a class="btn btn-line" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="radio_youtube_click">最新回を見る</a>
       </div>
     </div>
-    <dl class="deflist-p">
-      <div class="row"><dt>PROGRAM</dt><dd>AlternativeRadio</dd></div>
-      <div class="row"><dt>SCHEDULE</dt><dd>毎週月曜 21:00 ／ 約30分</dd></div>
-      <div class="row"><dt>CONTENTS</dt><dd>雑学、音楽、近況、趣味の話</dd></div>
-      <div class="row"><dt>参加する</dt><dd>お便り・コーナー投稿・番組内CMを募集中</dd></div>
-    </dl>
+    <div class="show-side">
+      <ul class="show-list">
+        <li>
+          <a class="card-link show" href="https://youtu.be/zljBCXmJz9M" target="_blank" rel="noopener" data-analytics-event="recommend_littlebusters_click">
+            <div class="thumb"><img src="https://i.ytimg.com/vi/zljBCXmJz9M/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt=""></div>
+            <div>
+              <p class="en">Music</p>
+              <h3>LITTLE BUSTERS</h3>
+              <p class="body">懐メロと邦ロックの歌枠から。“Vバスターズ”の皆さんと歌ったthe pillowsのカバー。</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="card-link show" href="https://youtu.be/Vt88WMTThaM" target="_blank" rel="noopener" data-analytics-event="recommend_jsp_click">
+            <div class="thumb"><img src="https://i.ytimg.com/vi/Vt88WMTThaM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt=""></div>
+            <div>
+              <p class="en">Game</p>
+              <h3>JSP3作品クリア耐久</h3>
+              <p class="body">レトロゲームからホラーまで。3作品を、見守りVTuber隊とクリアまで。</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="card-link show" href="travel/castle/utsunomiya/" data-analytics-event="recommend_vlog_utsunomiya_click">
+            <div class="thumb"><img src="https://i.ytimg.com/vi/EUsGtOLwHx0/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt=""></div>
+            <div>
+              <p class="en">Vlog</p>
+              <h3>城攻め見聞録 #3 宇都宮城</h3>
+              <p class="body">歴代将軍が泊まった名城と、神社と路面電車。</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <p class="show-note">このほか、舞台の経験を活かした声劇・朗読も配信しています。</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ 企業向け帯 ============ -->
 <section class="band-dark" aria-labelledby="bizBandTitle">
-  <div class="wrap" style="padding-top:34px; padding-bottom:34px;">
-    <div class="sec-head" style="margin-bottom:22px;">
+  <div class="wrap" style="padding-top:30px; padding-bottom:30px;">
+    <div class="sec-head" style="margin-bottom:20px;">
       <span class="eyebrow">For Business</span>
       <h2 class="sec-title" id="bizBandTitle" style="color:var(--text-d);">一緒に、面白い番組を作りませんか。</h2>
-      <a class="btn btn-solid" style="margin-left:auto;" href="business/" data-analytics-event="business_band_click">実績と対応領域を見る</a>
+      <a class="btn btn-solid biz-btn" href="business/" data-analytics-event="business_band_click">実績と対応領域を見る</a>
     </div>
-    <div class="stats">
+    <div class="stats stats-3">
       <div class="stat"><p class="v">1,000<span style="font-size:.66em;">+</span></p><p class="k">YouTube登録者</p></div>
-      <div class="stat"><p class="v jp">ほぼ半々</p><p class="k">視聴者の男女比<small>男性 51.6% ／ 女性 48.4%</small></p></div>
+      <div class="stat"><p class="v jp">ほぼ半々</p><p class="k">視聴者の男女比</p></div>
       <div class="stat"><p class="v">46</p><p class="k">主催イベント最大同時接続</p></div>
-      <div class="stat"><p class="v">15</p><p class="k">主催イベント出演者数</p></div>
-      <div class="stat"><p class="v jp">3D / Live2D</p><p class="k">対応モデル</p></div>
     </div>
-    <p class="band-note">登録者数は2026年5月に1,000人を達成。同時接続46名・出演者15名は2025年7月に主催した大規模声劇イベントの実績です。男女比はYouTubeアナリティクス2026年8月29日時点の数値です。</p>
+    <p class="band-note">登録者数は2026年5月に1,000人を達成。男女比はYouTubeアナリティクス2026年8月29日時点（男性51.6%、女性48.4%）。同時接続46名は2025年7月に主催した声劇イベントの実績です。</p>
   </div>
 </section>
 
-<!-- ============ プロフィール ============ -->
-<section class="wrap profile" id="profile" aria-labelledby="profileTitle">
-  <figure class="profile-fig">
-    <img src="images/tachie.webp" width="800" height="1200" loading="lazy" decoding="async" alt="藍・W・楽歌のキービジュアル（全身イラスト）">
-    <figcaption class="fig-meta">
-      <span class="cap">Key visual — 藍・W・楽歌</span>
-      <span class="fig-credit">ILLUSTRATION BY <a href="https://x.com/hori_games25" target="_blank" rel="noopener" data-analytics-event="illustrator_keyvisual_click">@hori_games25</a></span>
-    </figcaption>
-  </figure>
-  <div class="profile-body">
-    <p class="eyebrow">Profile</p>
-    <h2 class="sr-only" id="profileTitle">藍・W・楽歌について</h2>
-    <div class="profile-id" style="margin-top:18px;">
-      <div class="profile-avatar">
-        <img src="images/face.webp" width="683" height="720" loading="lazy" decoding="async" alt="藍・W・楽歌の顔">
-      </div>
-      <div>
-        <p class="profile-name">藍・<b>W</b>・楽歌</p>
-        <p class="profile-kana">あい・うぃんすとん・らっか</p>
-        <p class="profile-role">VIRTUAL ENTERTAINER ／ VTUBER</p>
-      </div>
-    </div>
-    <div class="profile-lead">
-      <p>歌とお芝居、ゲーム、旅行、歴史・地理が好きな男性VTuber。舞台役者、イベントMC、インターネットラジオDJなどの経験を持ち、いまはトーク、歌、レトロゲーム、旅をテーマに活動しています。</p>
-      <p>仕事終わりにふらっと立ち寄れる場所。昔好きだったものを、今の自分でもう一度楽しめる時間。そんな“大人の趣味時間”をお届けしています。</p>
-    </div>
-    <dl class="facts">
-      <div class="fact"><dt>BIRTHDAY</dt><dd>10月25日</dd></div>
-      <div class="fact"><dt>MUSIC</dt><dd>the pillows、ロックンロール、懐メロ</dd></div>
-      <div class="fact"><dt>HOBBY</dt><dd>旅行、グルメ、ドライブ、歴史</dd></div>
-      <div class="fact"><dt>CAREER</dt><dd>舞台役者・イベントMC・ラジオDJ</dd></div>
-    </dl>
-    <p style="margin-top:22px;"><a class="more" href="profile/" data-analytics-event="profile_page_click">プロフィールを詳しく見る</a></p>
+<!-- ============ プロフィール（詳しくは /profile/） ============ -->
+<section class="section wrap profile-mini" id="profile" aria-labelledby="profileTitle">
+  <div class="profile-avatar">
+    <img src="images/face.webp" width="683" height="720" loading="lazy" decoding="async" alt="藍・W・楽歌の顔">
   </div>
-</section>
-
-<!-- ============ 連載 ============ -->
-<section class="section wrap" id="series" aria-labelledby="seriesTitle">
-  <div class="sec-head" style="margin-bottom:20px;">
-    <span class="eyebrow">Series</span>
-    <h2 class="sec-title" id="seriesTitle">連載</h2>
-  </div>
-  <div class="grid-5">
-    <div class="cell"><p class="en">AlternativeRadio</p><h3>月曜夜の30分</h3><p class="body">雑学・音楽・近況。毎週月曜21:00からYouTubeで生放送。</p></div>
-    <div class="cell"><p class="en">Music</p><h3>懐メロと邦ロック</h3><p class="body">the pillows をはじめ90年代を中心に。歌枠リレー、ライブ出演も。</p></div>
-    <div class="cell"><p class="en">Retro Game</p><h3>あの頃を今の目線で</h3><p class="body">子どもの頃に遊んだ名作を、今だから分かる面白さで。</p></div>
-    <div class="cell"><p class="en">Voice Drama</p><h3>声劇・朗読</h3><p class="body">舞台俳優の経験を活かした声劇、朗読配信。</p></div>
-    <div class="cell"><p class="en">Vlog</p><h3>城・街歩き・旅</h3><p class="body">史跡巡り、ドライブ、グルメ。歴史と地理の視点で。</p></div>
-  </div>
-</section>
-
-<!-- ============ おすすめコンテンツ ============ -->
-<section class="section tint wrap" id="archive" aria-labelledby="recommendTitle">
-  <div class="sec-head" style="margin-bottom:20px;">
-    <span class="eyebrow">Recommend</span>
-    <h2 class="sec-title" id="recommendTitle">おすすめコンテンツ</h2>
-    <span style="margin-left:auto; display:flex; gap:20px; flex-wrap:wrap; align-items:baseline;">
-      <a class="more" href="travel/" data-analytics-event="travel_index_click">旅行記を読む</a>
-      <a class="more" href="https://www.youtube.com/@i_w_r_v" target="_blank" rel="noopener" data-analytics-event="youtube_archive_click">YouTubeチャンネル</a>
-    </span>
-  </div>
-  <div class="grid-3">
-    <article class="cell">
-      <a class="card-link" href="https://youtu.be/zljBCXmJz9M" target="_blank" rel="noopener" data-analytics-event="recommend_littlebusters_click">
-        <div class="thumb"><img src="https://i.ytimg.com/vi/zljBCXmJz9M/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="LITTLE BUSTERS カバー動画のサムネイル"></div>
-        <p class="en">歌 — ピロウズVカバーフェス2026</p>
-        <h3>LITTLE BUSTERS</h3>
-        <p class="body">“Vバスターズ”の皆さんと歌った、the pillowsのカバー。</p>
-      </a>
-    </article>
-    <article class="cell">
-      <a class="card-link" href="travel/castle/utsunomiya/" data-analytics-event="recommend_vlog_utsunomiya_click">
-        <div class="thumb"><img src="https://i.ytimg.com/vi/EUsGtOLwHx0/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="楽歌の城攻め見聞録 #3 宇都宮城のサムネイル"></div>
-        <p class="en">Vlog — 楽歌の城攻め見聞録</p>
-        <h3>#3 宇都宮城</h3>
-        <p class="body">歴代将軍が泊まった名城と、神社と路面電車。</p>
-      </a>
-    </article>
-    <article class="cell">
-      <a class="card-link" href="https://youtu.be/Vt88WMTThaM" target="_blank" rel="noopener" data-analytics-event="recommend_jsp_click">
-        <div class="thumb"><img src="https://i.ytimg.com/vi/Vt88WMTThaM/hqdefault.jpg" width="480" height="360" loading="lazy" decoding="async" alt="JSP3作品クリア耐久のサムネイル"></div>
-        <p class="en">ゲーム — 耐久配信</p>
-        <h3>JSP3作品クリア耐久</h3>
-        <p class="body">ホラーゲーム3作品を、見守りVTuber隊とクリアまで。</p>
-      </a>
-    </article>
+  <div>
+    <h2 class="profile-name" id="profileTitle">藍・<b>W</b>・楽歌</h2>
+    <p class="profile-kana">あい・うぃんすとん・らっか</p>
+    <p class="profile-mini-lead">歌とお芝居、ゲーム、旅、歴史・地理が好きな男性VTuber。<br>舞台役者、イベントMC、ラジオDJの経験を活かし、大人の趣味時間をお届けしています。</p>
+    <p class="profile-mini-more"><a class="more" href="profile/" data-analytics-event="profile_page_click">プロフィールを詳しく見る</a></p>
   </div>
 </section>
 
@@ -357,8 +326,8 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <span class="eyebrow">Contact</span>
     <h2 class="sec-title" id="contactTitle">お問い合わせ</h2>
   </div>
-  <p style="font-size:1.045rem; line-height:2; color:var(--muted-p); max-width:52em;">出演依頼、コラボ、その他のお問い合わせはフォームまたはX DMからご連絡ください。企業・法人からのご相談は、対応領域と実績をまとめた <a href="business/">お仕事のご相談ページ</a> をご覧ください。</p>
-  <div class="cover-actions" style="margin-top:24px;">
+  <p class="contact-lead">出演依頼やコラボのご相談は、フォームかX DMでどうぞ。企業・法人の方は <a href="business/">お仕事のご相談ページ</a> もご覧ください。</p>
+  <div class="cover-actions" style="margin-top:22px;">
     <a class="btn btn-ink" href="https://forms.gle/tPc6XtXfbnA2iaT76" target="_blank" rel="noopener" data-analytics-event="contact_form_click">お問い合わせフォーム</a>
     <a class="btn btn-line" href="https://x.com/i_w_r_v" target="_blank" rel="noopener" data-analytics-event="contact_x_dm_click">X DMで相談する</a>
   </div>
@@ -402,7 +371,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
       </nav>
     </div>
     <div class="foot-bottom">
-      <span>Illustration &amp; Key visual by <a href="https://x.com/hori_games25" target="_blank" rel="noopener">@hori_games25</a> ／ Live2D by <a href="https://x.com/ikada_nami" target="_blank" rel="noopener">@ikada_nami</a></span>
+      <span>Illustration &amp; Key visual by <a href="https://x.com/hori_games25" target="_blank" rel="noopener" data-analytics-event="illustrator_keyvisual_click">@hori_games25</a> ／ Live2D by <a href="https://x.com/ikada_nami" target="_blank" rel="noopener">@ikada_nami</a></span>
       <span><a href="privacy/">プライバシーポリシー</a> ／ © 2026 藍・W・楽歌 / Ai Winston Rucker</span>
     </div>
   </div>

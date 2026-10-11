@@ -1,6 +1,6 @@
 # 週次スケジュールの更新手順
 
-最終更新: 2026-08-30 ／ 新デザイン（週刊番組誌）用の手順
+最終更新: 2026-10-11 ／ 新デザイン（週刊番組誌）用の手順
 
 > **この文書が現行の手順です。** 2026-08-30 にトップページを新デザインへ差し替えました。旧 `SCHEDULE_UPDATE.md` は案内だけを残した抜け殻なので、削除して構いません。
 
@@ -100,7 +100,17 @@ git push origin main
 
 `index.html` の `<div class="week">` と `<ul class="week-list">` は、JSONの取得に失敗したときのための予備表示です。通常はJSONで上書きされます。**JSONを更新するとき、余裕があればここも同じ内容に直しておく**と、万一の通信失敗時に古い週が出るのを防げます（必須ではありません）。
 
-ページ上部の「NEXT ON AIR」（`id="nextOnAir"`）の初期値も同じく予備表示です。その週の最初の放送（例: `10.11 日 14:00 ／ コラボTRPG「SOOPER SIGN」`）に揃えておくと、読み込み前や失敗時に誤った予定が出ません。
+- `<div class="week">`（PC）は、これまでどおり7日ぶんを月曜から順に書きます。放送のない日は細い列で表示されます。
+- `<ul class="week-list">`（スマホ）は、**放送のある日だけ**を1行ずつ書き、おやすみ・未定の日は最後の1行にまとめます。JSONから描画するときも同じ形になります。
+
+```html
+<li><div class="row"><span class="date">11</span><span class="dow">SUN</span><span class="time">14:00</span><span class="ttl">コラボTRPG「SOOPER SIGN」</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
+<li class="off rest"><div class="row"><span class="lbl">ほかの日</span><span class="ttl">5日 おやすみ ／ 6〜10日 未定</span></div></li>
+```
+
+まとめの行は、同じ理由が続く日を「6〜10日」のように範囲にし、理由ごとに「／」で区切ります。放送のない日が無い週は、この行を書きません。
+
+表紙の「NEXT ON AIR」（`id="nextOnAir"`）の初期値も同じく予備表示です。その週の最初の放送（例: `10.11 日 14:00 ／ コラボTRPG「SOOPER SIGN」`）に揃えておくと、読み込み前や失敗時に誤った予定が出ません。
 
 ---
 
