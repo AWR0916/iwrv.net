@@ -188,25 +188,62 @@
       });
     }
 
-    /* スマホ：7日ぶんを縦に並べる。放送のない日も1行として出し、列を揃える */
+    /* スマホ：放送のある日だけを1行ずつ並べ、おやすみ・未定の日は最後の1行にまとめる */
     var list = document.getElementById('weekList');
     if (list) {
       list.textContent = '';
       days.forEach(function (d) {
+        if (d.off) return;
         var li = document.createElement('li');
-        if (d.off) li.className = 'off';
         var row = el('div', 'row');
         row.appendChild(el('span', 'date', d.date));
         row.appendChild(el('span', 'dow', d.dow || ''));
-        row.appendChild(el('span', 'time', d.off ? '' : (d.time || '')));
-        row.appendChild(d.off ? el('span', 'ttl', String(d.off)) : titleNode('span', d));
-        var dot = el('span', 'dot' + (d.off ? '' : ' ' + (KIND_SWATCH[d.kind] || 'sw-radio')));
+        row.appendChild(el('span', 'time', d.time || ''));
+        row.appendChild(titleNode('span', d));
+        var dot = el('span', 'dot ' + (KIND_SWATCH[d.kind] || 'sw-radio'));
         dot.setAttribute('aria-hidden', 'true');
         row.appendChild(dot);
         li.appendChild(row);
         list.appendChild(li);
       });
+
+      var rest = summarizeOff(days);
+      if (rest) {
+        var li = el('li', 'off rest');
+        var row = el('div', 'row');
+        row.appendChild(el('span', 'lbl', 'ほかの日'));
+        row.appendChild(el('span', 'ttl', rest));
+        li.appendChild(row);
+        list.appendChild(li);
+      }
     }
+  }
+
+  /* 放送のない日を「5日 おやすみ ／ 6〜10日 未定」の形にまとめる。
+     同じ理由が続く日は「6〜10日」と範囲にし、理由ごとに並べる */
+  function summarizeOff(days) {
+    var groups = [];          /* [{ label, ranges:[[from,to],...] }] 先に出た理由の順 */
+    var byLabel = {};
+    var prev = null;          /* 直前の日が同じ理由の放送なし日なら、その範囲 */
+    days.forEach(function (d, i) {
+      if (!d.off) { prev = null; return; }
+      var label = String(d.off);
+      var g = byLabel[label];
+      if (!g) { g = byLabel[label] = { label: label, ranges: [] }; groups.push(g); }
+      if (prev && prev.label === label && prev.index === i - 1) {
+        prev.range[1] = d.date;
+      } else {
+        var range = [d.date, d.date];
+        g.ranges.push(range);
+        prev = { label: label, range: range };
+      }
+      prev.index = i;
+    });
+    return groups.map(function (g) {
+      return g.ranges.map(function (r) {
+        return (r[0] === r[1] ? r[0] : r[0] + '〜' + r[1]) + '日';
+      }).join('・') + ' ' + g.label;
+    }).join(' ／ ');
   }
 
   /* ---------------- 更新情報 ---------------- */
@@ -255,6 +292,18 @@
       box.replaceChild(f, btn);
     });
   });
+
+  /* ---------------- スマホ固定CTA ----------------
+     data-hide-sticky を付けた表紙が見えている間は出さない。
+     表紙の主ボタンと並んで、最初の画面でボタンが競合しないようにする */
+  (function () {
+    var sticky = document.querySelector('.sticky-cta');
+    var hero = document.querySelector('[data-hide-sticky]');
+    if (!sticky || !hero || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+      sticky.setAttribute('data-hidden', String(entries[0].isIntersecting));
+    }).observe(hero);
+  })();
 
   /* ---------------- 起動 ---------------- */
   var base = document.body.getAttribute('data-base') || '';
