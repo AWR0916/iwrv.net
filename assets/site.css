@@ -202,7 +202,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
   transition:border-color .25s;
 }
 .door-fig img{ width:100%; height:100%; object-fit:cover; }
-.door:nth-child(1) .door-fig img{ object-position:50% 8%; }
+.door:nth-child(1) .door-fig img{ image-rendering:pixelated; } /* チャンネルアートはドット絵なので、ぼかさずに縮める */
 /* 動詞そのものを見出しにする。ここだけ大きく、ほかは静かに */
 .door-verb{
   font-family:var(--f-mincho); font-size:2.4rem; font-weight:800;
@@ -548,6 +548,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
   .door + .door::before{ content:none; }
   .door:last-child{ border-bottom:0; }
   .door-fig{ aspect-ratio:1/1; align-self:start; }
+  .door:nth-child(1) .door-fig img{ object-position:24% 50%; } /* 正方形ではドット絵の本人と吹き出しを見せる */
   .door:nth-child(3) .door-fig img{ object-position:86% 40%; } /* 正方形では告知画像の右側にいる本人を見せる */
   .door-verb{ font-size:1.6rem; letter-spacing:.1em; margin-top:0; }
   .door-title{ font-size:1rem; margin-top:2px; }
