@@ -365,7 +365,7 @@ a.sr-only:focus, a.sr-only:focus-visible{
 .card-body h3{ font-family:var(--f-body); font-size:1.06rem; font-weight:700; margin-top:8px; }
 .card-body p{ font-size:.88rem; line-height:1.9; color:var(--muted-p); margin-top:8px; }
 
-/* ============ 番組と連載 ============ */
+/* ============ ラジオ番組とおすすめ動画 ============ */
 .shows{ display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:start; }
 .show-main{ border-top:2px solid var(--ink); padding-top:20px; }
 .show-main .en{ font-family:var(--f-en); font-style:italic; font-size:1.3rem; color:var(--purple); }
