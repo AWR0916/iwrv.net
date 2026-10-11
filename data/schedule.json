@@ -1,14 +1,14 @@
 {
-  "period": "2026年10月2週",
-  "range": "2026.10.05 — 10.11",
-  "note": "体調不良のため、5日はお休み、6〜10日の配信予定は未定です。",
+  "period": "2026年10月3週",
+  "range": "2026.10.12 — 10.18",
+  "note": "",
   "days": [
-    { "date": "5", "dow": "MON", "off": "おやすみ" },
-    { "date": "6", "dow": "TUE", "off": "未定" },
-    { "date": "7", "dow": "WED", "off": "未定" },
-    { "date": "8", "dow": "THU", "off": "未定" },
-    { "date": "9", "dow": "FRI", "off": "未定" },
-    { "date": "10", "dow": "SAT", "off": "未定" },
-    { "date": "11", "dow": "SUN", "time": "14:00", "title": "コラボTRPG「SOOPER SIGN」", "kind": "game" }
+    { "date": "12", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #31", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "13", "dow": "TUE", "time": "21:00", "title": "#そらっかコラボ 腹を割って話そう！", "kind": "sp" },
+    { "date": "14", "dow": "WED", "off": "おやすみ" },
+    { "date": "15", "dow": "THU", "off": "おやすみ" },
+    { "date": "16", "dow": "FRI", "time": "20:00", "title": "DQ6 モンスターコンプ企画 #10", "kind": "game" },
+    { "date": "17", "dow": "SAT", "time": "19:00", "title": "Vsingerサバイバル部 秋の陣 第一夜", "kind": "game" },
+    { "date": "18", "dow": "SUN", "time": "14:00", "title": "コラボTRPG「SOOPER SIGN」／20:00〜 Vsingerサバイバル部 秋の陣 第二夜", "kind": "game" }
   ]
 }
