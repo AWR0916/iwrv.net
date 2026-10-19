@@ -1,14 +1,14 @@
 {
-  "period": "2026年10月3週",
-  "range": "2026.10.12 — 10.18",
+  "period": "2026年10月4週",
+  "range": "2026.10.19 — 10.25",
   "note": "",
   "days": [
-    { "date": "12", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #31", "genre": "ラジオ番組", "kind": "radio" },
-    { "date": "13", "dow": "TUE", "time": "21:00", "title": "#そらっかコラボ 腹を割って話そう！", "kind": "sp" },
-    { "date": "14", "dow": "WED", "off": "おやすみ" },
-    { "date": "15", "dow": "THU", "off": "おやすみ" },
-    { "date": "16", "dow": "FRI", "time": "20:00", "title": "DQ6 モンスターコンプ企画 #10", "kind": "game" },
-    { "date": "17", "dow": "SAT", "time": "19:00", "title": "Vsingerサバイバル部 秋の陣 第一夜", "kind": "game" },
-    { "date": "18", "dow": "SUN", "time": "14:00", "title": "コラボTRPG「SOOPER SIGN」／20:00〜 Vsingerサバイバル部 秋の陣 第二夜", "kind": "game" }
+    { "date": "19", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #32", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "20", "dow": "TUE", "time": "20:00", "title": "キャッスルヴァニアベルモンドカース #2", "kind": "game" },
+    { "date": "21", "dow": "WED", "off": "おやすみ" },
+    { "date": "22", "dow": "THU", "off": "おやすみ" },
+    { "date": "23", "dow": "FRI", "time": "20:00", "title": "DQ6 モンスターコンプ企画 #10", "kind": "game" },
+    { "date": "24", "dow": "SAT", "time": "23:00", "title": "誕生日カウントダウン配信", "kind": "sp" },
+    { "date": "25", "dow": "SUN", "off": "おやすみ" }
   ]
 }
