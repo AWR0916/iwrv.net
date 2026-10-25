@@ -127,7 +127,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
 <section class="wrap masthead" id="top">
   <div class="masthead-inner">
     <h1>藍・<b>W</b>・楽歌</h1>
-    <p class="issue" id="issueRange">2026.10.19 — 10.25 ／ WEEKLY SCHEDULE</p>
+    <p class="issue" id="issueRange">2026.10.26 — 11.01 ／ WEEKLY SCHEDULE</p>
   </div>
 </section>
 
@@ -137,7 +137,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <h2 id="coverTitle">大人になっても、<br>遊び足りない。</h2>
     <div class="next-onair">
       <p class="lbl"><span class="lamp" aria-hidden="true"></span><span class="cap">NEXT ON AIR</span></p>
-      <p class="val" id="nextOnAir">10.19 月 21:00 ／ AlternativeRadio #32</p>
+      <p class="val" id="nextOnAir">10.26 月 21:00 ／ AlternativeRadio #33</p>
     </div>
     <div class="cover-actions">
       <a class="btn btn-solid" href="https://www.youtube.com/@i_w_r_v?sub_confirmation=1" target="_blank" rel="noopener" data-analytics-event="youtube_subscribe_cover_click">YouTubeでチャンネル登録</a>
@@ -194,7 +194,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
   <div class="sec-head" style="margin-bottom:18px;">
     <span class="eyebrow">Weekly Schedule</span>
     <h2 class="sec-title" id="programmeTitle">今週の番組表</h2>
-    <span class="sec-note" id="weekPeriod">2026.10.19 — 10.25</span>
+    <span class="sec-note" id="weekPeriod">2026.10.26 — 11.01</span>
     <span class="legend">
       <span><i class="sw-radio" aria-hidden="true"></i>ラジオ</span>
       <span><i class="sw-sing" aria-hidden="true"></i>歌枠</span>
@@ -207,29 +207,28 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
 
   <!-- PC：7列（放送のない日は細い列）。JSON取得失敗時はこの初期値がそのまま残る -->
   <div class="week" id="week">
-    <div class="day"><div class="day-head"><span class="d">19</span><span class="w">MON</span></div>
-      <div class="prog radio"><div class="time">21:00</div><div class="ttl">AlternativeRadio #32</div><div class="gen">ラジオ番組</div></div></div>
-    <div class="day"><div class="day-head"><span class="d">20</span><span class="w">TUE</span></div>
-      <div class="prog game"><div class="time">20:00</div><div class="ttl">キャッスルヴァニアベルモンドカース #2</div></div></div>
-    <div class="day off"><div class="day-head"><span class="d">21</span><span class="w">WED</span></div>
+    <div class="day"><div class="day-head"><span class="d">26</span><span class="w">MON</span></div>
+      <div class="prog radio"><div class="time">21:00</div><div class="ttl">AlternativeRadio #33</div><div class="gen">ラジオ番組</div></div></div>
+    <div class="day"><div class="day-head"><span class="d">27</span><span class="w">TUE</span></div>
+      <div class="prog sing"><div class="time">20:00</div><div class="ttl">僕らはいつだって青春だ！爽やかロックンロール歌枠／深海から存在を叫ぶミスチル歌枠</div></div></div>
+    <div class="day off"><div class="day-head"><span class="d">28</span><span class="w">WED</span></div>
       <p class="off-txt">おやすみ</p></div>
-    <div class="day off"><div class="day-head"><span class="d">22</span><span class="w">THU</span></div>
+    <div class="day off"><div class="day-head"><span class="d">29</span><span class="w">THU</span></div>
       <p class="off-txt">おやすみ</p></div>
-    <div class="day"><div class="day-head"><span class="d">23</span><span class="w">FRI</span></div>
-      <div class="prog game"><div class="time">20:00</div><div class="ttl">DQ6 モンスターコンプ企画 #10</div></div></div>
-    <div class="day"><div class="day-head"><span class="d">24</span><span class="w">SAT</span></div>
-      <div class="prog sp"><div class="time">23:00</div><div class="ttl">誕生日カウントダウン配信</div></div></div>
-    <div class="day off"><div class="day-head"><span class="d">25</span><span class="w">SUN</span></div>
+    <div class="day"><div class="day-head"><span class="d">30</span><span class="w">FRI</span></div>
+      <div class="prog game"><div class="time">20:00</div><div class="ttl">キャッスルヴァニア ベルモンドカース #3</div></div></div>
+    <div class="day off"><div class="day-head"><span class="d">31</span><span class="w">SAT</span></div>
       <p class="off-txt">おやすみ</p></div>
+    <div class="day off"><div class="day-head"><span class="d">1</span><span class="w">SUN</span></div>
+      <p class="off-txt">未定</p></div>
   </div>
 
   <!-- スマホ：放送のある日だけ並べ、おやすみ・未定は最後の1行にまとめる -->
   <ul class="week-list" id="weekList">
-    <li><div class="row"><span class="date">19</span><span class="dow">MON</span><span class="time">21:00</span><span class="ttl">AlternativeRadio #32</span><span class="dot sw-radio" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">20</span><span class="dow">TUE</span><span class="time">20:00</span><span class="ttl">キャッスルヴァニアベルモンドカース #2</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">23</span><span class="dow">FRI</span><span class="time">20:00</span><span class="ttl">DQ6 モンスターコンプ企画 #10</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
-    <li><div class="row"><span class="date">24</span><span class="dow">SAT</span><span class="time">23:00</span><span class="ttl">誕生日カウントダウン配信</span><span class="dot sw-sp" aria-hidden="true"></span></div></li>
-    <li class="off rest"><div class="row"><span class="lbl">ほかの日</span><span class="ttl">21〜22日・25日 おやすみ</span></div></li>
+    <li><div class="row"><span class="date">26</span><span class="dow">MON</span><span class="time">21:00</span><span class="ttl">AlternativeRadio #33</span><span class="dot sw-radio" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">27</span><span class="dow">TUE</span><span class="time">20:00</span><span class="ttl">僕らはいつだって青春だ！爽やかロックンロール歌枠／深海から存在を叫ぶミスチル歌枠</span><span class="dot sw-sing" aria-hidden="true"></span></div></li>
+    <li><div class="row"><span class="date">30</span><span class="dow">FRI</span><span class="time">20:00</span><span class="ttl">キャッスルヴァニア ベルモンドカース #3</span><span class="dot sw-game" aria-hidden="true"></span></div></li>
+    <li class="off rest"><div class="row"><span class="lbl">ほかの日</span><span class="ttl">28〜29日・31日 おやすみ ／ 1日 未定</span></div></li>
   </ul>
 
   <div class="programme-foot">
@@ -344,7 +343,7 @@ if(v==='l')document.documentElement.setAttribute('data-fontsize','l');}catch(e){
     <h2 class="sec-title" id="updatesTitle">サイト更新情報</h2>
   </div>
   <ul class="updates-list" id="updatesList">
-    <li><a href="#programme"><time datetime="2026-10-19">2026.10.19</time><span>10月4週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
+    <li><a href="#programme"><time datetime="2026-10-25">2026.10.25</time><span>10月5週の配信スケジュールを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="travel/castle/utsunomiya/"><time datetime="2026-10-05">2026.10.05</time><span>旅行記「宇都宮城を歩く」を公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="travel/castle/oshi/"><time datetime="2026-09-17">2026.09.17</time><span>旅行記「行田・忍城と石田堤を歩く」を公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
     <li><a href="profile/"><time datetime="2026-09-17">2026.09.17</time><span>プロフィールページを公開</span><span class="arrow" aria-hidden="true">→</span></a></li>
