@@ -8,7 +8,7 @@
     { "date": "11", "dow": "WED", "off": "おやすみ" },
     { "date": "12", "dow": "THU", "off": "おやすみ" },
     { "date": "13", "dow": "FRI", "time": "21:00", "title": "#そらっか コラボ これって重い！？判定シートSP", "kind": "sp" },
-    { "date": "14", "dow": "SAT", "time": "13:00", "title": "3文字マダミスコラボ／21:00〜 ネセスコラボ", "kind": "game" },
+    { "date": "14", "dow": "SAT", "time": "13:00", "title": "3文字マダミスコラボ／21:00〜 Vsingerサバイバル部-NECESSE最終回-", "kind": "game" },
     { "date": "15", "dow": "SUN", "off": "未定" }
   ]
 }
