@@ -1,14 +1,14 @@
 {
-  "period": "2026年11月1週",
-  "range": "2026.11.02 — 11.08",
+  "period": "2026年11月2週",
+  "range": "2026.11.09 — 11.15",
   "note": "",
   "days": [
-    { "date": "2", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #34", "genre": "ラジオ番組", "kind": "radio" },
-    { "date": "3", "dow": "TUE", "time": "17:15", "title": "爆弾解除コラボ凸待ち参加", "kind": "game" },
-    { "date": "4", "dow": "WED", "off": "おやすみ" },
-    { "date": "5", "dow": "THU", "off": "おやすみ" },
-    { "date": "6", "dow": "FRI", "time": "21:00", "title": "第1回 霞が関文学早押しクイズ 名曲編", "kind": "sp" },
-    { "date": "7", "dow": "SAT", "off": "おやすみ" },
-    { "date": "8", "dow": "SUN", "off": "おやすみ" }
+    { "date": "9", "dow": "MON", "time": "21:00", "title": "AlternativeRadio #35", "genre": "ラジオ番組", "kind": "radio" },
+    { "date": "10", "dow": "TUE", "time": "20:00", "title": "歌枠", "kind": "sing" },
+    { "date": "11", "dow": "WED", "off": "おやすみ" },
+    { "date": "12", "dow": "THU", "off": "おやすみ" },
+    { "date": "13", "dow": "FRI", "time": "21:00", "title": "#そらっか コラボ これって重い！？判定シートSP", "kind": "sp" },
+    { "date": "14", "dow": "SAT", "time": "13:00", "title": "3文字マダミスコラボ／21:00〜 ネセスコラボ", "kind": "game" },
+    { "date": "15", "dow": "SUN", "off": "未定" }
   ]
 }
